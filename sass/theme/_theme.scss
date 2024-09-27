@@ -1,0 +1,27 @@
+@use "light";
+@use "dark";
+@use "styles" as *;
+
+@mixin theme {
+
+  :root {
+    @include light.colors;
+  }
+
+  @media only screen and (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+      @include dark.colors;
+    }
+  }
+
+  [data-theme="dark"] {
+    @include dark.colors;
+  }
+
+  [data-theme="light"] {
+    @include light.colors;
+  }
+
+
+  @include styles;
+}

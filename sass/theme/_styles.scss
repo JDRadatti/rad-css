@@ -1,0 +1,49 @@
+@use "../abstracts" as *;
+
+@mixin styles {
+  /* Semantic Variables 
+  *  naming: [prefix]-[element]-[property]-[descriptor]-[state]
+  * */
+
+  :root {
+
+    /* Icons */
+    $icon-font-style: Outlined; // Outlined, Rounded, or Sharp.
+
+    #{$prefix}-icon-font-family: Material Symbols #{$icon-font-style};
+    #{$prefix}-icon-font-size: 1.272;
+    #{$prefix}-icon-fill: 0; // 1 for filled, 0 for outlined
+    #{$prefix}-icon-wght: 300;
+    #{$prefix}-icon-grad: 0;
+    #{$prefix}-icon-opsz: 24;
+
+    /* Borders */
+    #{$prefix}-background-color: var(#{$color-prefix}-background);
+    #{$prefix}-font-color: var(#{$color-prefix}-on-background);
+
+    #{$prefix}-border-color: var(#{$color-prefix}-outline-variant, #727272);
+    #{$prefix}-border-width: 1px;
+    #{$prefix}-border: var(#{$prefix}-border-width) solid var(#{$prefix}-border-color);
+    #{$prefix}-border-transparent: var(#{$prefix}-border-width) solid transparent;
+
+    #{$prefix}-border-radius: 0.2em;
+    #{$prefix}-border-radius-circle: 50em;
+
+    #{$prefix}-input-color-onsurface: white;
+    #{$prefix}-input-color-font: var(#{$color-prefix}-on-surface);
+    #{$prefix}-input-color-element-bg: var(#{$color-prefix}-surface);
+    #{$prefix}-input-color-element-bg-focus: var(#{$color-prefix}-surface-container-lowest);
+    #{$prefix}-input-color-surfacevariant: var(#{$color-prefix}-on-surface-variant);
+    #{$prefix}-input-color-surface: var(#{$prefix}-border-color);
+    #{$prefix}-input-color-active: var(#{$color-prefix}-primary);
+    #{$prefix}-input-color-accent: var(#{$color-prefix}-primary-container);
+
+    #{$prefix}-input-border-width: 3px;
+    #{$prefix}-input-border: var(#{$prefix}-input-border-width) solid var(#{$prefix}-input-color-surface);
+    #{$prefix}-input-border-active: var(#{$prefix}-input-border-width) solid var(#{$prefix}-input-color-active);
+    #{$prefix}-input-border-hidden: var(#{$prefix}-input-border-width) solid var(#{$prefix}-background-color);
+    #{$prefix}-input-outline: var(#{$prefix}-input-border-width) solid var(#{$prefix}-input-color-accent);
+    #{$prefix}-input-border-invalid: var(#{$prefix}-input-border-width) solid var(#{$color-prefix}-error);
+    #{$prefix}-input-border-valid: var(#{$prefix}-input-border-width) solid var(#{$color-prefix}-success-color);
+  }
+}

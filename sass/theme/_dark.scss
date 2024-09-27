@@ -1,0 +1,69 @@
+@use "../abstracts" as *;
+
+@mixin colors {
+
+  /* Dark Colors */
+
+  #{$color-prefix}-primary: #{$dark__primary};
+  #{$color-prefix}-surface-tint: #{$dark__surface-tint};
+  #{$color-prefix}-on-primary: #{$dark__on-primary};
+  #{$color-prefix}-primary-container: #{$dark__primary-container};
+  #{$color-prefix}-on-primary-container: #{$dark__on-primary-container};
+  #{$color-prefix}-secondary: #{$dark__secondary};
+  #{$color-prefix}-on-secondary: #{$dark__on-secondary};
+  #{$color-prefix}-secondary-container: #{$dark__secondary-container};
+  #{$color-prefix}-on-secondary-container: #{$dark__on-secondary-container};
+  #{$color-prefix}-tertiary: #{$dark__tertiary};
+  #{$color-prefix}-on-tertiary: #{$dark__on-tertiary};
+  #{$color-prefix}-tertiary-container: #{$dark__tertiary-container};
+  #{$color-prefix}-on-tertiary-container: #{$dark__on-tertiary-container};
+  #{$color-prefix}-error: #{$dark__error};
+  #{$color-prefix}-on-error: #{$dark__on-error};
+  #{$color-prefix}-error-container: #{$dark__error-container};
+  #{$color-prefix}-on-error-container: #{$dark__on-error-container};
+  #{$color-prefix}-background: #{$dark__background};
+  #{$color-prefix}-on-background: #{$dark__on-background};
+  #{$color-prefix}-surface: #{$dark__surface};
+  #{$color-prefix}-on-surface: #{$dark__on-surface};
+  #{$color-prefix}-surface-variant: #{$dark__surface-variant};
+  #{$color-prefix}-on-surface-variant: #{$dark__on-surface-variant};
+  #{$color-prefix}-outline: #{$dark__outline};
+  #{$color-prefix}-outline-variant: #{$dark__outline-variant};
+  #{$color-prefix}-shadow: #{$dark__shadow};
+  #{$color-prefix}-scrim: #{$dark__scrim};
+  #{$color-prefix}-inverse-surface: #{$dark__inverse-surface};
+  #{$color-prefix}-inverse-on-surface: #{$dark__inverse-on-surface};
+  #{$color-prefix}-inverse-primary: #{$dark__inverse-primary};
+  #{$color-prefix}-primary-fixed: #{$dark__primary-fixed};
+  #{$color-prefix}-on-primary-fixed: #{$dark__on-primary-fixed};
+  #{$color-prefix}-primary-fixed-dim: #{$dark__primary-fixed-dim};
+  #{$color-prefix}-on-primary-fixed-variant: #{$dark__on-primary-fixed-variant};
+  #{$color-prefix}-secondary-fixed: #{$dark__secondary-fixed};
+  #{$color-prefix}-on-secondary-fixed: #{$dark__on-secondary-fixed};
+  #{$color-prefix}-secondary-fixed-dim: #{$dark__secondary-fixed-dim};
+  #{$color-prefix}-on-secondary-fixed-variant: #{$dark__on-secondary-fixed-variant};
+  #{$color-prefix}-tertiary-fixed: #{$dark__tertiary-fixed};
+  #{$color-prefix}-on-tertiary-fixed: #{$dark__on-tertiary-fixed};
+  #{$color-prefix}-tertiary-fixed-dim: #{$dark__tertiary-fixed-dim};
+  #{$color-prefix}-on-tertiary-fixed-variant: #{$dark__on-tertiary-fixed-variant};
+  #{$color-prefix}-surface-dim: #{$dark__surface-dim};
+  #{$color-prefix}-surface-bright: #{$dark__surface-bright};
+  #{$color-prefix}-surface-container-lowest: #{$dark__surface-container-lowest};
+  #{$color-prefix}-surface-container-low: #{$dark__surface-container-low};
+  #{$color-prefix}-surface-container: #{$dark__surface-container};
+  #{$color-prefix}-surface-container-high: #{$dark__surface-container-high};
+  #{$color-prefix}-surface-container-highest: #{$dark__surface-container-highest};
+  #{$color-prefix}-success-color: #{$dark__success-color};
+  #{$color-prefix}-success-on-color: #{$dark__success-on-color};
+  #{$color-prefix}-success-color-container: #{$dark__success-color-container};
+  #{$color-prefix}-success-on-color-container: #{$dark__success-on-color-container};
+  #{$color-prefix}-info-color: #{$dark__info-color};
+  #{$color-prefix}-info-on-color: #{$dark__info-on-color};
+  #{$color-prefix}-info-color-container: #{$dark__info-color-container};
+  #{$color-prefix}-info-on-color-container: #{$dark__info-on-color-container};
+  #{$color-prefix}-warning-color: #{$dark__warning-color};
+  #{$color-prefix}-warning-on-color: #{$dark__warning-on-color};
+  #{$color-prefix}-warning-color-container: #{$dark__warning-color-container};
+  #{$color-prefix}-warning-on-color-container: #{$dark__warning-on-color-container};
+  color-scheme: dark;
+}

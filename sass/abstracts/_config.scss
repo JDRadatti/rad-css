@@ -1,0 +1,6 @@
+// Prefix for all non-color variables.
+$prefix: --gcss;
+
+// This project uses --md-sys- as the color prefix in order to integrate
+// with material design.
+$color-prefix: --md-sys;
