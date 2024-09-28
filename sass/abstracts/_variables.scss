@@ -1,0 +1,33 @@
+$scaleFactor: 1.618;
+
+$md: 1em;
+
+$sm: calc($md / $scaleFactor);
+$xs: calc($sm / $scaleFactor);
+$xxs: calc($xs / $scaleFactor);
+
+$lg: calc($md * $scaleFactor);
+$xl: calc($lg * $scaleFactor);
+$xxl: calc($xl * $scaleFactor);
+
+// Increments
+
+$wholestep: $scaleFactor;
+$halfstep: sqrt($wholestep);
+$quarterstep: sqrt($halfstep);
+$eighthstep: sqrt($quarterstep);
+
+$wholestep-dec: calc($wholestep - 1);
+$halfstep-dec: calc($halfstep - 1);
+$quarterstep-dec: calc($quarterstep - 1);
+$eighthstep-dec: calc($eighthstep - 1);
+
+// Breakpoints
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
