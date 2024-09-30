@@ -1,0 +1,234 @@
+@use "../theme" as *;
+@use "../abstracts" as *;
+@use "sass:math";
+@use "sass:list";
+
+//diplay1 and body are the onluy ones using 1em
+
+/* Regular families */
+@each $size, $var in $typo-vars {
+
+
+  .#{$size} {
+    letter-spacing: typography($size, letter-spacing);
+    font-size: typography($size, font-size);
+    font-weight: typography($size, font-weight);
+    line-height: typography($size, line-height);
+
+    &__bold {
+      letter-spacing: typography($size, letter-spacing);
+      font-size: typography($size, font-size);
+      font-weight: typography($size, font-weight-bold);
+      line-height: typography($size, line-height);
+    }
+  }
+}
+
+@each $size, $element in $typo-default-elements {
+  #{list.nth($element, 1)} {
+    letter-spacing: typography($size, letter-spacing);
+    font-size: typography($size, font-size);
+    font-weight: list.nth($element, 2);
+    line-height: typography($size, line-height);
+  }
+}
+
+body {
+  cursor: default;
+  letter-spacing: typography(body, letter-spacing);
+  font-size: typography(body, font-size);
+  font-weight: typography(body, font-weight);
+  line-height: typography(body, line-height);
+}
+
+.display1 {
+  @include quarter-spacing;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+display2,
+title1,
+title2,
+title3,
+heading,
+subheading,
+callout,
+caption,
+overline,
+label {
+  @include half-spacing;
+}
+
+.overline {
+  text-transform: uppercase;
+}
+
+abbr,
+samp,
+b,
+strong,
+code,
+sup,
+sub,
+a,
+em,
+cite,
+del,
+ins,
+kbd,
+u,
+s,
+mark,
+cord,
+i {
+  letter-spacing: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+
+a {
+  color: var(#{$prefix}-highlight);
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: #{$underlineOffset};
+  color: var(#{$prefix}-highlight-hover);
+}
+
+a:active {
+  text-decoration: underline;
+  text-underline-offset: #{$underlineOffset};
+  color: var(#{$prefix}-highlight-active);
+}
+
+samp {
+  color: var(#{$color-prefix}-on-surface-variant)
+}
+
+mark,
+kbd,
+code {
+  padding: var(--xs);
+  border-radius: #{$borderRadius};
+}
+
+code {
+  background-color: var(#{$color-prefix}-surface-variant);
+  color: var(#{$color-prefix}-on-surface-variant)
+}
+
+kbd {
+  background-color: var(#{$color-prefix}-surface-variant);
+  color: var(#{$color-prefix}-on-surface-variant);
+  font-weight: 700;
+}
+
+mark {
+  background-color: var(#{$color-prefix}-warning-color-container);
+  color: var(#{$color-prefix}-warning-on-color-container);
+}
+
+ins {
+  text-decoration: none;
+  color: var(#{$color-prefix}-success-color);
+}
+
+del {
+  color: var(#{$color-prefix}-error);
+}
+
+u {
+  text-underline-offset: #{$underlineOffset};
+}
+
+p {
+  line-height: 1.25;
+}
+
+ol {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+ul {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-left: var(--xl);
+}
+
+blockquote {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 2rem;
+  padding: 0 var(--sm);
+  font-size: 1em;
+  line-height: var(--wholestep);
+  border-left: #{$borderHighlight};
+}
+
+a {
+  font-weight: 700;
+}
+
+figcaption {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+img {
+  margin-top: 1em;
+  margin-bottom: 11em;
+}
+
+hr {
+  margin: 1em 0;
+  border: none;
+  border-bottom: #{$border};
+}
+
+@media screen and (max-width: breakpoint(md)) {
+
+  h1,
+  .display1__bold,
+  .display1 {
+    --fontSize: 3.3301em;
+    font-size: var(--fontSize);
+  }
+}
+
+@media screen and (max-width: breakpoint(sm)) {
+
+  h1,
+  display1,
+  .display1__bold {
+    --fontSize: 2.61743em;
+    font-size: var(--fontSize);
+  }
+
+  h2,
+  .display2,
+  .display2__bold {
+    --fontSize: 2.05818em;
+    font-size: var(--fontSize);
+  }
+
+  h3,
+  .title1__bold,
+  .title1 {
+    --fontSize: 1.82285em;
+    font-size: var(--fontSize);
+  }
+}
