@@ -1,26 +1,6 @@
-$scaleFactor: 1.618;
-
-$md: 1em;
-
-$sm: calc($md / $scaleFactor);
-$xs: calc($sm / $scaleFactor);
-$xxs: calc($xs / $scaleFactor);
-
-$lg: calc($md * $scaleFactor);
-$xl: calc($lg * $scaleFactor);
-$xxl: calc($xl * $scaleFactor);
-
-// Increments
-
-$wholestep: $scaleFactor;
-$halfstep: sqrt($wholestep);
-$quarterstep: sqrt($halfstep);
-$eighthstep: sqrt($quarterstep);
-
-$wholestep-dec: calc($wholestep - 1);
-$halfstep-dec: calc($halfstep - 1);
-$quarterstep-dec: calc($quarterstep - 1);
-$eighthstep-dec: calc($eighthstep - 1);
+@use "sass:map";
+@use "sass:math";
+@use "config" as *;
 
 // Breakpoints
 $breakpoints: (
@@ -31,3 +11,179 @@ $breakpoints: (
   xl: 1200px,
   xxl: 1400px,
 );
+
+@function breakpoint($size) {
+  @return map.get($breakpoints, $size);
+}
+
+$goldenRatio: 1.618;
+$lineHeightIns: 1em * $goldenRatio;
+
+//Incrents
+$wholestep: $goldenRatio;
+$halfstep: math.sqrt($wholestep);
+$quarterstep: math.sqrt($halfstep);
+$eighthstep: math.sqrt($quarterstep);
+
+$wholestep-dec: $wholestep - 1;
+$halfstep-dec: $halfstep - 1;
+$quarterstep-dec: $quarterstep - 1;
+$eighthstep-dec: $eighthstep - 1;
+
+$whole-md: calc($scaleFactor * $wholestep) + em;
+$whole-sm: calc($scaleFactor * $wholestep * $wholestep-dec) + em;
+$whole-xs: calc($scaleFactor * $wholestep * $halfstep-dec) + em;
+$whole-xxs: calc($scaleFactor * $wholestep * $quarterstep-dec) + em;
+$whole-lg: calc($scaleFactor * $wholestep * $wholestep) + em;
+$whole-xl: calc($scaleFactor * $wholestep * $wholestep * $wholestep) + em;
+$whole-xxl: calc($scaleFactor * $wholestep * $wholestep * $wholestep * $wholestep) + em;
+
+$half-md: calc($scaleFactor * $halfstep) + em;
+$half-sm: calc($scaleFactor * $halfstep * $wholestep-dec) + em;
+$half-xs: calc($scaleFactor * $halfstep * $halfstep-dec) + em;
+$half-xxs: calc($scaleFactor * $halfstep * $quarterstep-dec) + em;
+$half-lg: calc($scaleFactor * $halfstep * $wholestep) + em;
+$half-xl: calc($scaleFactor * $halfstep * $wholestep * $wholestep) + em;
+$half-xxl: calc($scaleFactor * $halfstep * $wholestep * $wholestep * $wholestep) + em;
+
+$quarter-md: calc($scaleFactor * $quarterstep) + em;
+$quarter-sm: calc($scaleFactor * $quarterstep * $wholestep-dec) + em;
+$quarter-xs: calc($scaleFactor * $quarterstep * $halfstep-dec) + em;
+$quarter-xxs: calc($scaleFactor * $quarterstep * $quarterstep-dec) + em;
+$quarter-lg: calc($scaleFactor * $quarterstep * $wholestep) + em;
+$quarter-xl: calc($scaleFactor * $quarterstep * $wholestep * $wholestep) + em;
+$quarter-xxl: calc($scaleFactor * $quarterstep * $wholestep * $wholestep * $wholestep) + em;
+
+@mixin whole-spacing {
+  --md: #{$whole-md};
+  --sm: #{$whole-sm};
+  --xs: #{$whole-xs};
+  --xxs: #{$whole-xxs};
+  --lg: #{$whole-lg};
+  --xl: #{$whole-xl};
+  --xxl: #{$whole-xxl};
+}
+
+@mixin half-spacing {
+  --md: #{$half-md};
+  --sm: #{$half-sm};
+  --xs: #{$half-xs};
+  --xxs: #{$half-xxs};
+  --lg: #{$half-lg};
+  --xl: #{$half-xl};
+  --xxl: #{$half-xxl};
+}
+
+@mixin quarter-spacing {
+  --md: #{$quarter-md};
+  --sm: #{$quarter-sm};
+  --xs: #{$quarter-xs};
+  --xxs: #{$quarter-xxs};
+  --lg: #{$quarter-lg};
+  --xl: #{$quarter-xl};
+  --xxl: #{$quarter-xxl};
+}
+
+// Typography (unitless)
+$typo-vars: (
+  display1: (letter-spacing: -0.022em,
+    font-size: ($wholestep * $wholestep * $wholestep) + em,
+    font-weight: 400,
+    font-weight-bold: 700,
+    line-height: $quarterstep,
+    corrected-padding: calc(($wholestep * $wholestep * $wholestep) / $quarterstep),
+  ),
+  display2: (letter-spacing: -0.022em,
+    font-size: ($wholestep * $wholestep) + em,
+    font-weight: 400,
+    font-weight-bold: 700,
+    line-height: $halfstep,
+    corrected-padding: calc(($wholestep * $wholestep) / $halfstep),
+  ),
+  title1: (letter-spacing: -0.022em,
+    font-size: ($wholestep * $halfstep) + em,
+    font-weight: 400,
+    font-weight-bold: 700,
+    line-height: $halfstep,
+    corrected-padding: calc(($wholestep * $wholestep) / $halfstep),
+  ),
+  title2: (letter-spacing: -0.022em,
+    font-size: ($wholestep) + em,
+    font-weight: 400,
+    font-weight-bold: 600,
+    line-height: $halfstep,
+    corrected-padding: calc(($wholestep * $halfstep) / $halfstep),
+  ),
+  title3: (letter-spacing: -0.017em,
+    font-size: $halfstep + em,
+    font-weight: 400,
+    font-weight-bold: 600,
+    line-height: $halfstep,
+    corrected-padding: 1,
+  ),
+  heading: (letter-spacing: -0.014em,
+    font-size: $quarterstep + em,
+    font-weight: 600,
+    font-weight-bold: 700,
+    line-height: $halfstep,
+    corrected-padding: calc($quarterstep / $halfstep),
+  ),
+  subheading: (letter-spacing: -0.007em,
+    font-size: calc(1 / $quarterstep) + em,
+    font-weight: 600,
+    font-weight-bold: 600,
+    line-height: $halfstep,
+    corrected-padding: calc(calc(1 / $quarterstep) / $halfstep),
+  ),
+  body: (letter-spacing: -0.011em,
+    font-size: 1em,
+    font-weight: 400,
+    font-weight-bold: 600,
+    line-height: $wholestep,
+    corrected-padding: calc(1 / $wholestep),
+  ),
+  callout: (letter-spacing: -0.009em,
+    font-size: calc(1 / $eighthstep) + em,
+    font-weight: 400,
+    font-weight-bold: 600,
+    line-height: $halfstep,
+    corrected-padding: calc(calc(1 / $eighthstep) / $halfstep),
+  ),
+  label: (letter-spacing: -0.004em,
+    font-size: calc(calc(1 / $quarterstep) / $eighthstep) + em,
+    font-weight: 500,
+    font-weight-bold: 700,
+    line-height: $halfstep,
+    corrected-padding: calc(calc(calc(1 / $quarterstep) / $eighthstep) / $halfstep),
+  ),
+  caption: (letter-spacing: -0.007em,
+    font-size: calc(1 / $halfstep) + em,
+    font-weight: 400,
+    font-weight-bold: 600,
+    line-height: $halfstep,
+    corrected-padding: calc(calc(1 / $halfstep) / $halfstep),
+  ),
+  overline: (letter-spacing: 0.0618em,
+    font-size: calc(1 / $halfstep) + em,
+    font-weight: 400,
+    font-weight-bold: 600,
+    line-height: $halfstep,
+    corrected-padding: calc(calc(1 / $halfstep) / $halfstep),
+  ),
+);
+
+// default element and font-weight
+$typo-default-elements: (
+  display1: (h1, 700),
+  display2: (h2, 700),
+  title1: (h3, 700),
+  title2: (h4, 600),
+  title3: (h5, 600),
+  heading: (h6, 700),
+  body: (p, 400),
+  caption: (caption, 400),
+);
+
+@function typography($size, $var) {
+  @return map.get(map.get($typo-vars, $size), $var)
+}
