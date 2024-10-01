@@ -1,0 +1,151 @@
+@use "../utilities" as *;
+@use "../abstracts" as *;
+@use "sass:list";
+
+$body-spacing: var(--sm);
+
+@mixin card-padding($largest-font) {
+  padding: typography($largest-font, padding);
+  padding-top: typography($largest-font, corrected-padding);
+  border-radius: typography($largest-font, padding);
+}
+
+@mixin card-header($largest-font) {
+  $p: typography($largest-font, padding);
+  $p-corrected: typography($largest-font, corrected-padding);
+  $m: calc(-1 * typography($largest-font, padding));
+  $m-corrected: calc(-1 * typography($largest-font, corrected-padding));
+  padding: $p-corrected $p calc($body-spacing / 2) $p;
+  margin: $m-corrected $m $body-spacing $m;
+  border-radius: $p $p 0 0;
+}
+
+@mixin card-footer($largest-font) {
+  $p: typography($largest-font, padding);
+  $m: calc(-1 * typography($largest-font, padding));
+  padding: calc($body-spacing/2) $p $p $p;
+  margin: $body-spacing $m $m $m;
+  border-radius: 0 0 $p $p;
+}
+
+article {
+  @include bg-surfacecontainerhigh;
+  @include card-padding(body);
+
+  header {
+    @include card-header(heading);
+    @include border-bottom;
+    margin-bottom: $body-spacing;
+  }
+
+  footer {
+    @include card-footer(heading);
+    @include border-top;
+    margin-top: $body-spacing;
+  }
+}
+
+// Dynamic Padding: 
+@if $dynamic-card-padding ==true {
+
+  // padding equation from "Perfect Ratios & How to Find Them" by ChainLift on YouTube: 
+  // x = largest font size in container
+  // h = line-height of x
+  // padding-left/right/bottom: x
+  // padding-top/border-radius: x/h
+  article:has(.heading),
+  article:has(h6) {
+    @include card-padding(heading);
+
+    & header {
+      @include card-header(heading);
+    }
+
+    & footer {
+      @include card-footer(heading);
+    }
+  }
+
+  article:has(.title3),
+  article:has(h5) {
+    @include card-padding(title3);
+
+
+    & header {
+      @include card-header(title1);
+    }
+
+    & footer {
+      @include card-footer(title1);
+    }
+  }
+
+  article:has(.title2),
+  article:has(h4) {
+    @include card-padding(title2);
+
+
+    & header {
+      @include card-header(title2);
+    }
+
+    & footer {
+      @include card-footer(title2);
+    }
+  }
+
+  article:has(.title1),
+  article:has(h3) {
+    @include card-padding(title1);
+
+    & header {
+      @include card-header(title1);
+    }
+
+    & footer {
+      @include card-footer(title1);
+    }
+  }
+
+  article:has(.display2),
+  article:has(h2) {
+    @include card-padding(display2);
+
+    & header {
+      @include card-header(display2);
+    }
+
+    & footer {
+      @include card-footer(display2);
+    }
+
+  }
+
+  article:has(.display1),
+  article:has(h1) {
+    @include card-padding(display1);
+
+    & header {
+      @include card-header(display1);
+    }
+
+    & footer {
+      @include card-footer(display1);
+    }
+  }
+}
+
+// Card utilities
+
+article.outline {
+  @include bg-transparent;
+  @include border;
+}
+
+article.text {
+  @include bg-transparent;
+}
+
+article header {
+  @include background-img;
+}
