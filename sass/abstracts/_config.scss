@@ -4,3 +4,6 @@ $prefix: --gcss;
 // This project uses --md-sys- as the color prefix in order to integrate
 // with material design.
 $color-prefix: --md-sys;
+
+// Dynamic Card Padding adjusts the card padding based on largest font size automatically.
+$dynamic-card-padding: true;
