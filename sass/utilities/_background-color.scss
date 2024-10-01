@@ -1,0 +1,978 @@
+@use "../abstracts" as *;
+
+@mixin bg-transparent {
+  background-color: transparent;
+  --state-color: #000;
+}
+
+@mixin bg-primary {
+  background-color: var(#{$color-prefix}-primary);
+  color: var(#{$color-prefix}-on-primary);
+  --state-color: var(#{$color-prefix}-on-primary);
+}
+
+@mixin bg-onprimary {
+  background-color: var(#{$color-prefix}-on-primary);
+  color: var(#{$color-prefix}-primary);
+  --state-color: var(#{$color-prefix}-primary);
+}
+
+@mixin bg-primarycontainer {
+  background-color: var(#{$color-prefix}-primary-container);
+  color: var(#{$color-prefix}-on-primary-container);
+  --state-color: var(#{$color-prefix}-on-primary-container);
+}
+
+@mixin bg-onprimarycontainer {
+  background-color: var(#{$color-prefix}-on-primary-container);
+  color: var(#{$color-prefix}-primary-container);
+  --state-color: var(#{$color-prefix}-primary-container);
+}
+
+@mixin bg-secondary {
+  background-color: var(#{$color-prefix}-secondary);
+  color: var(#{$color-prefix}-on-secondary);
+  --state-color: var(#{$color-prefix}-on-secondary);
+}
+
+@mixin bg-onsecondary {
+  background-color: var(#{$color-prefix}-on-secondary);
+  color: var(#{$color-prefix}-secondary);
+  --state-color: var(#{$color-prefix}-secondary);
+}
+
+@mixin bg-secondarycontainer {
+  background-color: var(#{$color-prefix}-secondary-container);
+  color: var(#{$color-prefix}-on-secondary-container);
+  --state-color: var(#{$color-prefix}-on-secondary-container);
+}
+
+@mixin bg-onsecondarycontainer {
+  background-color: var(#{$color-prefix}-on-secondary-container);
+  color: var(#{$color-prefix}-secondary-container);
+  --state-color: var(#{$color-prefix}-secondary-container);
+}
+
+@mixin bg-tertiary {
+  background-color: var(#{$color-prefix}-tertiary);
+  color: var(#{$color-prefix}-on-tertiary);
+  --state-color: var(#{$color-prefix}-on-tertiary);
+}
+
+
+@mixin bg-ontertiary {
+  background-color: var(#{$color-prefix}-on-tertiary);
+  color: var(#{$color-prefix}-tertiary);
+  --state-color: var(#{$color-prefix}-tertiary);
+}
+
+@mixin bg-tertiarycontainer {
+  background-color: var(#{$color-prefix}-tertiary-container);
+  color: var(#{$color-prefix}-on-tertiary-container);
+  --state-color: var(#{$color-prefix}-on-tertiary-container);
+}
+
+@mixin bg-ontertiarycontainer {
+  background-color: var(#{$color-prefix}-on-tertiary-container);
+  color: var(#{$color-prefix}-tertiary-container);
+  --state-color: var(#{$color-prefix}-tertiary-container);
+}
+
+@mixin bg-error {
+  background-color: var(#{$color-prefix}-error);
+  color: var(#{$color-prefix}-on-error);
+  --state-color: var(#{$color-prefix}-on-error);
+}
+
+@mixin bg-onerror {
+  background-color: var(#{$color-prefix}-on-error);
+  color: var(#{$color-prefix}-error);
+  --state-color: var(#{$color-prefix}-error);
+}
+
+@mixin bg-errorcontainer {
+  background-color: var(#{$color-prefix}-error-container);
+  color: var(#{$color-prefix}-on-error-container);
+  --state-color: var(#{$color-prefix}-on-error-container);
+}
+
+@mixin bg-onerrorcontainer {
+  background-color: var(#{$color-prefix}-on-error-container);
+  color: var(#{$color-prefix}-error-container);
+  --state-color: var(#{$color-prefix}-error-container);
+}
+
+@mixin bg-background {
+  background-color: var(#{$color-prefix}-background);
+  color: var(#{$color-prefix}-on-background);
+  --state-color: var(#{$color-prefix}-on-background);
+}
+
+@mixin bg-onbackground {
+  background-color: var(#{$color-prefix}-on-background);
+  color: var(#{$color-prefix}-background);
+  --state-color: var(#{$color-prefix}-background);
+}
+
+@mixin bg-surface {
+  background-color: var(#{$color-prefix}-surface);
+  color: var(#{$color-prefix}-on-surface);
+  --state-color: var(#{$color-prefix}-on-surface);
+}
+
+@mixin bg-onsurface {
+  background-color: var(#{$color-prefix}-on-surface);
+  color: var(#{$color-prefix}-surface);
+  --state-color: var(#{$color-prefix}-surface);
+}
+
+@mixin bg-surfacevariant {
+  background-color: var(#{$color-prefix}-surface-variant);
+  color: var(#{$color-prefix}-on-surface-variant);
+  --state-color: var(#{$color-prefix}-on-surface-variant);
+}
+
+
+@mixin bg-onsurfacevariant {
+  background-color: var(#{$color-prefix}-on-surface-variant);
+  color: var(#{$color-prefix}-surface-variant);
+  --state-color: var(#{$color-prefix}-surface-variant);
+}
+
+@mixin bg-outline {
+  background-color: var(#{$color-prefix}-outline);
+  color: inherit;
+  --state-color: var(#{$color-prefix}-outline);
+}
+
+@mixin bg-outlinevariant {
+  background-color: var(#{$color-prefix}-outline-variant);
+  color: inherit;
+  --state-color: var(#{$color-prefix}-outline-variant);
+
+}
+
+@mixin bg-shadow {
+  background-color: var(#{$color-prefix}-shadow);
+  color: inherit;
+  --state-color: var(#{$color-prefix}-shadow);
+}
+
+@mixin bg-scrim {
+  background-color: var(#{$color-prefix}-scrim);
+  color: inherit;
+  --state-color: var(#{$color-prefix}-scrim);
+}
+
+@mixin bg-inversesurface {
+  background-color: var(#{$color-prefix}-inverse-surface);
+  color: var(#{$color-prefix}-surface);
+  --state-color: var(#{$color-prefix}-surface);
+}
+
+@mixin bg-inverseonsurface {
+  background-color: var(#{$color-prefix}-inverse-on-surface);
+  color: var(#{$color-prefix}-inverse-surface);
+  --state-color: var(#{$color-prefix}-inverse-surface);
+}
+
+@mixin bg-inverseprimary {
+  background-color: var(#{$color-prefix}-inverse-primary);
+  color: var(#{$color-prefix}-primary);
+  --state-color: var(#{$color-prefix}-primary);
+}
+
+@mixin bg-success {
+  background-color: var(#{$color-prefix}-success-color);
+  color: var(#{$color-prefix}-success-on-color);
+  --state-color: var(#{$color-prefix}-success-on-color);
+}
+
+@mixin bg-successcontainer {
+  background-color: var(#{$color-prefix}-success-color-container);
+  color: var(#{$color-prefix}-success-on-color-container);
+  --state-color: var(#{$color-prefix}-success-on-color-container);
+}
+
+@mixin bg-onsuccess {
+  background-color: var(#{$color-prefix}-success-on-color);
+  color: var(#{$color-prefix}-success-color);
+  --state-color: var(#{$color-prefix}-success-color);
+}
+
+@mixin bg-onsuccesscontainer {
+  background-color: var(#{$color-prefix}-success-on-color-container);
+  color: var(#{$color-prefix}-success-color-container);
+  --state-color: var(#{$color-prefix}-success-color-container);
+}
+
+@mixin bg-warning {
+  background-color: var(#{$color-prefix}-warning-color);
+  color: var(#{$color-prefix}-warning-on-color);
+  --state-color: var(#{$color-prefix}-warning-on-color);
+}
+
+@mixin bg-warningcontainer {
+  background-color: var(#{$color-prefix}-warning-color-container);
+  color: var(#{$color-prefix}-warning-on-color-container);
+  --state-color: var(#{$color-prefix}-warning-on-color-container);
+}
+
+@mixin bg-onwarning {
+  background-color: var(#{$color-prefix}-warning-on-color);
+  color: var(#{$color-prefix}-warning-color);
+  --state-color: var(#{$color-prefix}-warning-color);
+}
+
+@mixin bg-onwarningcontainer {
+
+  background-color: var(#{$color-prefix}-warning-on-color-container);
+  color: var(#{$color-prefix}-warning-color-container);
+  --state-color: var(#{$color-prefix}-warning-color-container);
+}
+
+@mixin bg-info {
+  background-color: var(#{$color-prefix}-info-color);
+  color: var(#{$color-prefix}-info-on-color);
+  --state-color: var(#{$color-prefix}-info-on-color);
+}
+
+@mixin bg-infocontainer {
+  background-color: var(#{$color-prefix}-info-color-container);
+  color: var(#{$color-prefix}-info-on-color-container);
+  --state-color: var(#{$color-prefix}-info-on-color-container);
+}
+
+@mixin bg-oninfo {
+  background-color: var(#{$color-prefix}-info-on-color);
+  color: var(#{$color-prefix}-info-color);
+  --state-color: var(#{$color-prefix}-info-color);
+}
+
+@mixin bg-oninfocontainer {
+  background-color: var(#{$color-prefix}-info-on-color-container);
+  color: var(#{$color-prefix}-info-color-container);
+  --state-color: var(#{$color-prefix}-info-color-container);
+}
+
+@mixin bg-primaryfixed {
+  background-color: var(#{$color-prefix}-primary-fixed);
+  color: var(#{$color-prefix}-on-primary-fixed);
+  --state-color: var(#{$color-prefix}-on-primary-fixed);
+}
+
+@mixin bg-onprimaryfixed {
+  background-color: var(#{$color-prefix}-on-primary-fixed);
+  color: var(#{$color-prefix}-primary-fixed);
+  --state-color: var(#{$color-prefix}-primary-fixed);
+}
+
+@mixin bg-primaryfixeddim {
+  background-color: var(#{$color-prefix}-primary-fixed-dim);
+  color: var(#{$color-prefix}-on-primary-fixed);
+  --state-color: var(#{$color-prefix}-on-primary-fixed);
+}
+
+@mixin bg-onprimaryfixedvariant {
+  background-color: var(#{$color-prefix}-on-primary-fixed-variant);
+  color: var(#{$color-prefix}-primary-fixed);
+  --state-color: var(#{$color-prefix}-primary-fixed);
+}
+
+@mixin bg-secondaryfixed {
+  background-color: var(#{$color-prefix}-secondary-fixed);
+  color: var(#{$color-prefix}-on-secondary-fixed);
+  --state-color: var(#{$color-prefix}-on-secondary-fixed);
+}
+
+@mixin bg-onsecondaryfixed {
+  background-color: var(#{$color-prefix}-on-secondary-fixed);
+  color: var(#{$color-prefix}-secondary-fixed);
+  --state-color: var(#{$color-prefix}-secondary-fixed);
+}
+
+@mixin bg-secondaryfixeddim {
+  background-color: var(#{$color-prefix}-secondary-fixed-dim);
+  color: var(#{$color-prefix}-on-secondary-fixed);
+  --state-color: var(#{$color-prefix}-on-secondary-fixed);
+}
+
+@mixin bg-onsecondaryfixedvariant {
+  background-color: var(#{$color-prefix}-on-secondary-fixed-variant);
+  color: var(#{$color-prefix}-on-secondary-fixed);
+  --state-color: var(#{$color-prefix}-on-secondary-fixed);
+}
+
+@mixin bg-tertiaryfixed {
+  background-color: var(#{$color-prefix}-tertiary-fixed);
+  color: var(#{$color-prefix}-on-tertiary-fixed);
+  --state-color: var(#{$color-prefix}-on-tertiary-fixed);
+}
+
+@mixin bg-ontertiaryfixed {
+  background-color: var(#{$color-prefix}-on-tertiary-fixed);
+  color: var(#{$color-prefix}-tertiary-fixed);
+  --state-color: var(#{$color-prefix}-tertiary-fixed);
+}
+
+@mixin bg-ontertiaryfixedvariant {
+  background-color: var(#{$color-prefix}-tertiary-fixed);
+  color: var(#{$color-prefix}-on-tertiary-fixed-variant);
+  --state-color: var(#{$color-prefix}-on-tertiary-fixed-variant);
+}
+
+@mixin bg-tertiaryfixeddim {
+  background-color: var(#{$color-prefix}-tertiary-fixed-dim);
+  color: var(#{$color-prefix}-on-tertiary-fixed);
+  --state-color: var(#{$color-prefix}-on-tertiary-fixed);
+}
+
+@mixin bg-surfacedim {
+  background-color: var(#{$color-prefix}-surface-dim);
+  color: var(#{$color-prefix}-on-surface);
+  --state-color: var(#{$color-prefix}-on-surface);
+}
+
+@mixin bg-surfacebright {
+  background-color: var(#{$color-prefix}-surface-bright);
+  color: var(#{$color-prefix}-on-surface);
+  --state-color: var(#{$color-prefix}-on-surface);
+}
+
+@mixin bg-surfacecontainerlowest {
+  background-color: var(#{$color-prefix}-surface-container-lowest);
+  color: var(#{$color-prefix}-on-surface);
+  --state-color: var(#{$color-prefix}-on-surface);
+}
+
+@mixin bg-surfacecontainerlow {
+  background-color: var(#{$color-prefix}-surface-container-low);
+  color: var(#{$color-prefix}-on-surface);
+  --state-color: var(#{$color-prefix}-on-surface);
+}
+
+@mixin bg-surfacecontainer {
+  background-color: var(#{$color-prefix}-surface-container);
+  color: var(#{$color-prefix}-on-surface);
+  --state-color: var(#{$color-prefix}-on-surface);
+}
+
+@mixin bg-surfacecontainerhigh {
+  background-color: var(#{$color-prefix}-surface-container-high);
+  color: var(#{$color-prefix}-on-surface);
+  --state-color: var(#{$color-prefix}-on-surface);
+}
+
+@mixin bg-surfacecontainerhighest {
+  background-color: var(#{$color-prefix}-surface-container-highest);
+  color: var(#{$color-prefix}-on-surface);
+  --state-color: var(#{$color-prefix}-on-surface);
+}
+
+@mixin bg-primary {
+  background-color: var(#{$color-prefix}-on-primary);
+  color: var(#{$color-prefix}-primary);
+  --state-color: var(#{$color-prefix}-primary);
+}
+
+@mixin bg-primarycontainer {
+  background-color: var(#{$color-prefix}-primary-container);
+  color: var(#{$color-prefix}-on-primary-container);
+  --state-color: var(#{$color-prefix}-on-primary-container);
+}
+
+@mixin bg-onprimarycontainer {
+  background-color: var(#{$color-prefix}-on-primary-container);
+  color: var(#{$color-prefix}-primary-container);
+  --state-color: var(#{$color-prefix}-primary-container);
+}
+
+@mixin bg-secondary {
+  background-color: var(#{$color-prefix}-secondary);
+  color: var(#{$color-prefix}-on-secondary);
+  --state-color: var(#{$color-prefix}-on-secondary);
+}
+
+
+@mixin bg-onsecondary {
+  background-color: var(#{$color-prefix}-on-secondary);
+  color: var(#{$color-prefix}-secondary);
+  --state-color: var(#{$color-prefix}-secondary);
+}
+
+@mixin bg-secondarycontainer {
+  background-color: var(#{$color-prefix}-secondary-container);
+  color: var(#{$color-prefix}-on-secondary-container);
+  --state-color: var(#{$color-prefix}-on-secondary-container);
+}
+
+@mixin bg-onsecondarycontainer {
+  background-color: var(#{$color-prefix}-on-secondary-container);
+  color: var(#{$color-prefix}-secondary-container);
+  --state-color: var(#{$color-prefix}-secondary-container);
+}
+
+
+@mixin bg-tertiary {
+  background-color: var(#{$color-prefix}-tertiary);
+  color: var(#{$color-prefix}-on-tertiary);
+  --state-color: var(#{$color-prefix}-on-tertiary);
+}
+
+
+@mixin bg-ontertiary {
+  background-color: var(#{$color-prefix}-on-tertiary);
+  color: var(#{$color-prefix}-tertiary);
+  --state-color: var(#{$color-prefix}-tertiary);
+}
+
+@mixin bg-tertiarycontainer {
+  background-color: var(#{$color-prefix}-tertiary-container);
+  color: var(#{$color-prefix}-on-tertiary-container);
+  --state-color: var(#{$color-prefix}-on-tertiary-container);
+}
+
+@mixin bg-ontertiarycontainer {
+  background-color: var(#{$color-prefix}-on-tertiary-container);
+  color: var(#{$color-prefix}-tertiary-container);
+  --state-color: var(#{$color-prefix}-tertiary-container);
+}
+
+@mixin bg-error {
+  background-color: var(#{$color-prefix}-error);
+  color: var(#{$color-prefix}-on-error);
+  --state-color: var(#{$color-prefix}-on-error);
+}
+
+
+@mixin bg-onerror {
+  background-color: var(#{$color-prefix}-on-error);
+  color: var(#{$color-prefix}-error);
+  --state-color: var(#{$color-prefix}-error);
+}
+
+@mixin bg-errorcontainer {
+  background-color: var(#{$color-prefix}-error-container);
+  color: var(#{$color-prefix}-on-error-container);
+  --state-color: var(#{$color-prefix}-on-error-container);
+}
+
+@mixin bg-onerrorcontainer {
+  background-color: var(#{$color-prefix}-on-error-container);
+  color: var(#{$color-prefix}-error-container);
+  --state-color: var(#{$color-prefix}-error-container);
+}
+
+
+@mixin bg-background {
+  background-color: var(#{$color-prefix}-background);
+  color: var(#{$color-prefix}-on-background);
+  --state-color: var(#{$color-prefix}-on-background);
+}
+
+
+@mixin bg-onbackground {
+  background-color: var(#{$color-prefix}-on-background);
+  color: var(#{$color-prefix}-background);
+  --state-color: var(#{$color-prefix}-background);
+}
+
+@mixin bg-surface {
+  background-color: var(#{$color-prefix}-surface);
+  color: var(#{$color-prefix}-on-surface);
+  --state-color: var(#{$color-prefix}-on-surface);
+}
+
+
+@mixin bg-onsurface {
+  background-color: var(#{$color-prefix}-on-surface);
+  color: var(#{$color-prefix}-surface);
+  --state-color: var(#{$color-prefix}-surface);
+}
+
+
+@mixin bg-surfacevariant {
+  background-color: var(#{$color-prefix}-surface-variant);
+  color: var(#{$color-prefix}-on-surface-variant);
+  --state-color: var(#{$color-prefix}-on-surface-variant);
+}
+
+
+@mixin bg-onsurfacevariant {
+  background-color: var(#{$color-prefix}-on-surface-variant);
+  color: var(#{$color-prefix}-surface-variant);
+  --state-color: var(#{$color-prefix}-surface-variant);
+}
+
+@mixin bg-outline {
+  background-color: var(#{$color-prefix}-outline);
+  color: inherit;
+  --state-color: var(#{$color-prefix}-outline);
+}
+
+@mixin bg-outlinevariant {
+  background-color: var(#{$color-prefix}-outline-variant);
+  color: inherit;
+  --state-color: var(#{$color-prefix}-outline-variant);
+
+}
+
+@mixin bg-shadow {
+  background-color: var(#{$color-prefix}-shadow);
+  color: inherit;
+  --state-color: var(#{$color-prefix}-shadow);
+}
+
+@mixin bg-scrim {
+  background-color: var(#{$color-prefix}-scrim);
+  color: inherit;
+  --state-color: var(#{$color-prefix}-scrim);
+}
+
+
+@mixin bg-inversesurface {
+  background-color: var(#{$color-prefix}-inverse-surface);
+  color: var(#{$color-prefix}-surface);
+  --state-color: var(#{$color-prefix}-surface);
+}
+
+@mixin bg-inverseonsurface {
+  background-color: var(#{$color-prefix}-inverse-on-surface);
+  color: var(#{$color-prefix}-inverse-surface);
+  --state-color: var(#{$color-prefix}-inverse-surface);
+}
+
+@mixin bg-inverseprimary {
+  background-color: var(#{$color-prefix}-inverse-primary);
+  color: var(#{$color-prefix}-primary);
+  --state-color: var(#{$color-prefix}-primary);
+}
+
+@mixin bg-success {
+  background-color: var(#{$color-prefix}-success-color);
+  color: var(#{$color-prefix}-success-on-color);
+  --state-color: var(#{$color-prefix}-success-on-color);
+}
+
+@mixin bg-successcontainer {
+  background-color: var(#{$color-prefix}-success-color-container);
+  color: var(#{$color-prefix}-success-on-color-container);
+  --state-color: var(#{$color-prefix}-success-on-color-container);
+}
+
+@mixin bg-onsuccess {
+  background-color: var(#{$color-prefix}-success-on-color);
+  color: var(#{$color-prefix}-success-color);
+  --state-color: var(#{$color-prefix}-success-color);
+}
+
+@mixin bg-onsuccesscontainer {
+  background-color: var(#{$color-prefix}-success-on-color-container);
+  color: var(#{$color-prefix}-success-color-container);
+  --state-color: var(#{$color-prefix}-success-color-container);
+}
+
+
+@mixin bg-warning {
+  background-color: var(#{$color-prefix}-warning-color);
+  color: var(#{$color-prefix}-warning-on-color);
+  --state-color: var(#{$color-prefix}-warning-on-color);
+}
+
+@mixin bg-warningcontainer {
+  background-color: var(#{$color-prefix}-warning-color-container);
+  color: var(#{$color-prefix}-warning-on-color-container);
+  --state-color: var(#{$color-prefix}-warning-on-color-container);
+}
+
+@mixin bg-onwarning {
+  background-color: var(#{$color-prefix}-warning-on-color);
+  color: var(#{$color-prefix}-warning-color);
+  --state-color: var(#{$color-prefix}-warning-color);
+}
+
+@mixin bg-onwarningcontainer {
+
+  background-color: var(#{$color-prefix}-warning-on-color-container);
+  color: var(#{$color-prefix}-warning-color-container);
+  --state-color: var(#{$color-prefix}-warning-color-container);
+}
+
+@mixin bg-info {
+  background-color: var(#{$color-prefix}-info-color);
+  color: var(#{$color-prefix}-info-on-color);
+  --state-color: var(#{$color-prefix}-info-on-color);
+}
+
+@mixin bg-infocontainer {
+  background-color: var(#{$color-prefix}-info-color-container);
+  color: var(#{$color-prefix}-info-on-color-container);
+  --state-color: var(#{$color-prefix}-info-on-color-container);
+}
+
+@mixin bg-oninfo {
+  background-color: var(#{$color-prefix}-info-on-color);
+  color: var(#{$color-prefix}-info-color);
+  --state-color: var(#{$color-prefix}-info-color);
+}
+
+@mixin bg-oninfocontainer {
+  background-color: var(#{$color-prefix}-info-on-color-container);
+  color: var(#{$color-prefix}-info-color-container);
+  --state-color: var(#{$color-prefix}-info-color-container);
+}
+
+@mixin bg-primaryfixed {
+  background-color: var(#{$color-prefix}-primary-fixed);
+  color: var(#{$color-prefix}-on-primary-fixed);
+  --state-color: var(#{$color-prefix}-on-primary-fixed);
+}
+
+@mixin bg-onprimaryfixed {
+  background-color: var(#{$color-prefix}-on-primary-fixed);
+  color: var(#{$color-prefix}-primary-fixed);
+  --state-color: var(#{$color-prefix}-primary-fixed);
+}
+
+@mixin bg-primaryfixeddim {
+  background-color: var(#{$color-prefix}-primary-fixed-dim);
+  color: var(#{$color-prefix}-on-primary-fixed);
+  --state-color: var(#{$color-prefix}-on-primary-fixed);
+}
+
+@mixin bg-onprimaryfixedvariant {
+  background-color: var(#{$color-prefix}-on-primary-fixed-variant);
+  color: var(#{$color-prefix}-primary-fixed);
+  --state-color: var(#{$color-prefix}-primary-fixed);
+}
+
+@mixin bg-secondaryfixed {
+  background-color: var(#{$color-prefix}-secondary-fixed);
+  color: var(#{$color-prefix}-on-secondary-fixed);
+  --state-color: var(#{$color-prefix}-on-secondary-fixed);
+}
+
+@mixin bg-onsecondaryfixed {
+  background-color: var(#{$color-prefix}-on-secondary-fixed);
+  color: var(#{$color-prefix}-secondary-fixed);
+  --state-color: var(#{$color-prefix}-secondary-fixed);
+}
+
+@mixin bg-secondaryfixeddim {
+  background-color: var(#{$color-prefix}-secondary-fixed-dim);
+  color: var(#{$color-prefix}-on-secondary-fixed);
+  --state-color: var(#{$color-prefix}-on-secondary-fixed);
+}
+
+@mixin bg-onsecondaryfixedvariant {
+  background-color: var(#{$color-prefix}-on-secondary-fixed-variant);
+  color: var(#{$color-prefix}-on-secondary-fixed);
+  --state-color: var(#{$color-prefix}-on-secondary-fixed);
+}
+
+@mixin bg-tertiaryfixed {
+  background-color: var(#{$color-prefix}-tertiary-fixed);
+  color: var(#{$color-prefix}-on-tertiary-fixed);
+  --state-color: var(#{$color-prefix}-on-tertiary-fixed);
+}
+
+@mixin bg-ontertiaryfixed {
+  background-color: var(#{$color-prefix}-on-tertiary-fixed);
+  color: var(#{$color-prefix}-tertiary-fixed);
+  --state-color: var(#{$color-prefix}-tertiary-fixed);
+}
+
+@mixin bg-ontertiaryfixedvariant {
+  background-color: var(#{$color-prefix}-tertiary-fixed);
+  color: var(#{$color-prefix}-on-tertiary-fixed-variant);
+  --state-color: var(#{$color-prefix}-on-tertiary-fixed-variant);
+}
+
+@mixin bg-tertiaryfixeddim {
+  background-color: var(#{$color-prefix}-tertiary-fixed-dim);
+  color: var(#{$color-prefix}-on-tertiary-fixed);
+  --state-color: var(#{$color-prefix}-on-tertiary-fixed);
+}
+
+@mixin bg-surfacedim {
+  background-color: var(#{$color-prefix}-surface-dim);
+  color: var(#{$color-prefix}-on-surface);
+  --state-color: var(#{$color-prefix}-on-surface);
+}
+
+@mixin bg-surfacebright {
+  background-color: var(#{$color-prefix}-surface-bright);
+  color: var(#{$color-prefix}-on-surface);
+  --state-color: var(#{$color-prefix}-on-surface);
+}
+
+@mixin bg-surfacecontainerlowest {
+  background-color: var(#{$color-prefix}-surface-container-lowest);
+  color: var(#{$color-prefix}-on-surface);
+  --state-color: var(#{$color-prefix}-on-surface);
+}
+
+@mixin bg-surfacecontainerlow {
+  background-color: var(#{$color-prefix}-surface-container-low);
+  color: var(#{$color-prefix}-on-surface);
+  --state-color: var(#{$color-prefix}-on-surface);
+}
+
+@mixin bg-surfacecontainer {
+  background-color: var(#{$color-prefix}-surface-container);
+  color: var(#{$color-prefix}-on-surface);
+  --state-color: var(#{$color-prefix}-on-surface);
+}
+
+@mixin bg-surfacecontainerhigh {
+  background-color: var(#{$color-prefix}-surface-container-high);
+  color: var(#{$color-prefix}-on-surface);
+  --state-color: var(#{$color-prefix}-on-surface);
+}
+
+@mixin bg-surfacecontainerhighest {
+  background-color: var(#{$color-prefix}-surface-container-highest);
+}
+
+
+
+
+.bg-primary {
+  @include bg-primary;
+}
+
+.bg-onprimary {
+  @include bg-onprimary;
+}
+
+.bg-primarycontainer {
+  @include bg-primarycontainer;
+}
+
+.bg-onprimarycontainer {
+  @include bg-onprimarycontainer;
+}
+
+.bg-secondary {
+  @include bg-secondary;
+}
+
+.bg-onsecondary {
+  @include bg-onsecondary;
+}
+
+.bg-secondarycontainer {
+  @include bg-secondarycontainer;
+}
+
+.bg-onsecondarycontainer {
+  @include bg-onsecondarycontainer;
+}
+
+.bg-tertiary {
+  @include bg-tertiary;
+}
+
+.bg-ontertiary {
+  @include bg-ontertiary;
+}
+
+.bg-tertiarycontainer {
+  @include bg-tertiarycontainer;
+}
+
+.bg-ontertiarycontainer {
+  @include bg-ontertiarycontainer;
+}
+
+.bg-error {
+  @include bg-error;
+}
+
+.bg-onerror {
+  @include bg-onerror;
+}
+
+.bg-errorcontainer {
+  @include bg-errorcontainer;
+}
+
+.bg-onerrorcontainer {
+  @include bg-onerrorcontainer;
+}
+
+.bg-background {
+  @include bg-background;
+}
+
+.bg-onbackground {
+  @include bg-onbackground;
+}
+
+.bg-surface {
+  @include bg-surface;
+}
+
+.bg-onsurface {
+  @include bg-onsurface;
+}
+
+.bg-surfacevariant {
+  @include bg-surfacevariant;
+}
+
+.bg-onsurfacevariant {
+  @include bg-onsurfacevariant;
+}
+
+.bg-outline {
+  @include bg-outline;
+}
+
+.bg-outlinevariant {
+  @include bg-outlinevariant;
+}
+
+.bg-shadow {
+  @include bg-shadow;
+}
+
+.bg-scrim {
+  @include bg-scrim;
+}
+
+.bg-inversesurface {
+  @include bg-inversesurface;
+}
+
+.bg-inverseonsurface {
+  @include bg-inverseonsurface;
+}
+
+.bg-inverseprimary {
+  @include bg-inverseprimary;
+}
+
+.bg-success {
+  @include bg-success;
+}
+
+.bg-successcontainer {
+  @include bg-successcontainer;
+}
+
+.bg-onsuccess {
+  @include bg-onsuccess;
+}
+
+.bg-onsuccesscontainer {
+  @include bg-onsuccesscontainer;
+}
+
+.bg-warning {
+  @include bg-warning;
+}
+
+.bg-warningcontainer {
+  @include bg-warningcontainer;
+}
+
+.bg-onwarning {
+  @include bg-onwarning;
+}
+
+.bg-onwarningcontainer {
+  @include bg-onwarningcontainer;
+}
+
+.bg-info {
+  @include bg-info;
+}
+
+.bg-infocontainer {
+  @include bg-infocontainer;
+}
+
+.bg-oninfo {
+  @include bg-oninfo;
+}
+
+.bg-oninfocontainer {
+  @include bg-oninfocontainer;
+}
+
+.bg-primaryfixed {
+  @include bg-primaryfixed;
+}
+
+.bg-onprimaryfixed {
+  @include bg-onprimaryfixed;
+}
+
+.bg-primaryfixeddim {
+  @include bg-primaryfixeddim;
+}
+
+.bg-onprimaryfixedvariant {
+  @include bg-onprimaryfixedvariant;
+}
+
+.bg-secondaryfixed {
+  @include bg-secondaryfixed;
+}
+
+.bg-onsecondaryfixed {
+  @include bg-onsecondaryfixed;
+}
+
+.bg-secondaryfixeddim {
+  @include bg-secondaryfixeddim;
+}
+
+.bg-onsecondaryfixedvariant {
+  @include bg-onsecondaryfixedvariant;
+}
+
+.bg-tertiaryfixed {
+  @include bg-tertiaryfixed;
+}
+
+.bg-ontertiaryfixed {
+  @include bg-ontertiaryfixed;
+}
+
+.bg-ontertiaryfixedvariant {
+  @include bg-ontertiaryfixedvariant;
+}
+
+.bg-tertiaryfixeddim {
+  @include bg-tertiaryfixeddim;
+}
+
+.bg-surfacedim {
+  @include bg-surfacedim;
+}
+
+.bg-surfacebright {
+  @include bg-surfacebright;
+}
+
+.bg-surfacecontainerlowest {
+  @include bg-surfacecontainerlowest;
+}
+
+.bg-surfacecontainerlow {
+  @include bg-surfacecontainerlow;
+}
+
+.bg-surfacecontainer {
+  @include bg-surfacecontainer;
+}
+
+.bg-surfacecontainerhigh {
+  @include bg-surfacecontainerhigh;
+}
+
+.bg-surfacecontainerhighest {
+  @include bg-surfacecontainerhighest;
+}
