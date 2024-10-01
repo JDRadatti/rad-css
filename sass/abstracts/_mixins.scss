@@ -1,0 +1,84 @@
+@use "variables" as *;
+
+// Borders
+
+@mixin border-none {
+  border: none;
+}
+
+@mixin border {
+  border: $border;
+}
+
+@mixin border-bottom {
+  border-bottom: $border;
+}
+
+@mixin border-top {
+  border-top: $border;
+}
+
+@mixin border-left {
+  border-left: $border;
+}
+
+@mixin border-right {
+  border-right: $border;
+}
+
+@mixin border-thick {
+  border: $border;
+  border-width: $borderWidthThick;
+}
+
+@mixin border-thick-bottom {
+  border-bottom: $border;
+  border-width: $borderWidthThick;
+}
+
+@mixin border-thick-top {
+  border-top: $border;
+  border-width: $borderWidthThick;
+}
+
+@mixin border-thick-left {
+  border-left: $border;
+  border-width: $borderWidthThick;
+}
+
+@mixin border-thick-right {
+  border-right: $border;
+  border-width: $borderWidthThick;
+}
+
+@mixin border-highlight {
+  border: $borderHighlight;
+}
+
+@mixin border-highlight-bottom {
+  border-bottom: $borderHighlight;
+}
+
+@mixin border-highlight-top {
+  border-top: $borderHighlight;
+}
+
+@mixin border-highlight-left {
+  border-left: $borderHighlight;
+}
+
+@mixin border-highlight-right {
+  border-right: $borderHighlight;
+}
+
+// Border Radius
+@mixin border-radius {
+  border-radius: #{$borderRadius};
+}
+
+@mixin background-img {
+  background-image: url("../placeholder.png")
+}
+
+
+// State Layers
