@@ -4,7 +4,25 @@
 @include theme;
 
 :root {
-  font-size: 1rem;
+  font-size: $fontSize;
+  font-family: $fontFamilyMain;
+
+  @include whole-spacing;
+
+  /*Increments*/
+
+  --wholestep: $wholestep;
+  --halfstep: $halfstep;
+  --quarterstep: $quarterstep;
+  --eighthstep: $eighthstep;
+
+  --wholestep-dec: $wholestep-dec;
+  --halfstep-dec: $halfstep-dec;
+  --quarterstep-dec: $quarterstep-dec;
+  --eighthstep-dec: $eighthstep-dec;
+
+  --lineHeightInEms: calc(1em * $wholestep);
+
 
   background-color: var(#{$prefix}-background-color);
   color: var(#{$prefix}-font-color);
