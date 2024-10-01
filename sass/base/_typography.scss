@@ -39,10 +39,12 @@ body {
   font-size: typography(body, font-size);
   font-weight: typography(body, font-weight);
   line-height: typography(body, line-height);
+  margin-bottom: var(--xxs);
 }
 
 .display1 {
   @include quarter-spacing;
+  margin-bottom: var(--xxs);
 }
 
 h2,
@@ -50,17 +52,18 @@ h3,
 h4,
 h5,
 h6,
-display2,
-title1,
-title2,
-title3,
-heading,
-subheading,
-callout,
-caption,
-overline,
-label {
+.display2,
+.title1,
+.title2,
+.title3,
+.heading,
+.subheading,
+.callout,
+.caption,
+.overline,
+.label {
   @include half-spacing;
+  margin-bottom: var(--xxs);
 }
 
 .overline {
@@ -121,8 +124,8 @@ samp {
 mark,
 kbd,
 code {
-  padding: var(--xs);
-  border-radius: #{$borderRadius};
+  padding: var(--xxs);
+  @include border-radius;
 }
 
 code {
@@ -176,7 +179,11 @@ blockquote {
   padding: 0 var(--sm);
   font-size: 1em;
   line-height: var(--wholestep);
-  border-left: #{$borderHighlight};
+  @include border-thick-left;
+
+  footer {
+    opacity: var(#{$prefix}-subtext-opacity);
+  }
 }
 
 a {
@@ -195,8 +202,7 @@ img {
 
 hr {
   margin: 1em 0;
-  border: none;
-  border-bottom: #{$border};
+  @include border-bottom;
 }
 
 @media screen and (max-width: breakpoint(md)) {
