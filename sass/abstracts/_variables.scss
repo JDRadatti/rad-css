@@ -1,5 +1,6 @@
 @use "sass:map";
 @use "sass:math";
+@use "sass:list";
 @use "config" as *;
 
 // Breakpoints
@@ -15,6 +16,10 @@ $breakpoints: (
 @function breakpoint($size) {
   @return map.get($breakpoints, $size);
 }
+
+// ScaleFactor controls the relative scale of spacing. Increasing scaleFactor 
+// will increase the spacing and visa versa.
+$scaleFactor: 1;
 
 $goldenRatio: 1.618;
 $lineHeightIns: 1em * $goldenRatio;
@@ -88,102 +93,167 @@ $quarter-xxl: calc($scaleFactor * $quarterstep * $wholestep * $wholestep * $whol
 $typo-vars: (
   display1: (letter-spacing: -0.022em,
     font-size: ($wholestep * $wholestep * $wholestep) + em,
+    padding: $scaleFactor * ($wholestep * $wholestep * $wholestep) + em,
     font-weight: 400,
     font-weight-bold: 700,
     line-height: $quarterstep,
-    corrected-padding: calc(($wholestep * $wholestep * $wholestep) / $quarterstep),
+    corrected-padding: $scaleFactor * calc(($wholestep * $wholestep * $wholestep) / $quarterstep) + em,
   ),
   display2: (letter-spacing: -0.022em,
     font-size: ($wholestep * $wholestep) + em,
+    padding: $scaleFactor * ($wholestep * $wholestep) + em,
     font-weight: 400,
     font-weight-bold: 700,
     line-height: $halfstep,
-    corrected-padding: calc(($wholestep * $wholestep) / $halfstep),
+    corrected-padding: $scaleFactor * calc(($wholestep * $wholestep) / $halfstep) + em,
   ),
   title1: (letter-spacing: -0.022em,
     font-size: ($wholestep * $halfstep) + em,
+    padding: $scaleFactor * ($wholestep * $halfstep) + em,
     font-weight: 400,
     font-weight-bold: 700,
     line-height: $halfstep,
-    corrected-padding: calc(($wholestep * $wholestep) / $halfstep),
+    corrected-padding: $scaleFactor * calc(($wholestep * $wholestep) / $halfstep) + em,
   ),
   title2: (letter-spacing: -0.022em,
     font-size: ($wholestep) + em,
+    padding: $scaleFactor * ($wholestep) + em,
     font-weight: 400,
     font-weight-bold: 600,
     line-height: $halfstep,
-    corrected-padding: calc(($wholestep * $halfstep) / $halfstep),
+    corrected-padding: $scaleFactor * calc(($wholestep * $halfstep) / $halfstep) + em,
   ),
   title3: (letter-spacing: -0.017em,
     font-size: $halfstep + em,
+    padding: $scaleFactor * $halfstep + em,
     font-weight: 400,
     font-weight-bold: 600,
     line-height: $halfstep,
-    corrected-padding: 1,
+    corrected-padding: $scaleFactor * 1em,
   ),
   heading: (letter-spacing: -0.014em,
     font-size: $quarterstep + em,
+    padding: $scaleFactor * $quarterstep + em,
     font-weight: 600,
     font-weight-bold: 700,
     line-height: $halfstep,
-    corrected-padding: calc($quarterstep / $halfstep),
+    corrected-padding: $scaleFactor * calc($quarterstep / $halfstep) + em,
   ),
   subheading: (letter-spacing: -0.007em,
     font-size: calc(1 / $quarterstep) + em,
+    padding: $scaleFactor * calc(1 / $quarterstep) + em,
     font-weight: 600,
     font-weight-bold: 600,
     line-height: $halfstep,
-    corrected-padding: calc(calc(1 / $quarterstep) / $halfstep),
+    corrected-padding: $scaleFactor * calc(calc(1 / $quarterstep) / $halfstep) + em,
   ),
   body: (letter-spacing: -0.011em,
     font-size: 1em,
+    padding: $scaleFactor * 1em,
     font-weight: 400,
     font-weight-bold: 600,
     line-height: $wholestep,
-    corrected-padding: calc(1 / $wholestep),
+    corrected-padding: $scaleFactor * calc(1 / $wholestep) + em,
   ),
   callout: (letter-spacing: -0.009em,
     font-size: calc(1 / $eighthstep) + em,
+    padding: $scaleFactor * calc(1 / $eighthstep) + em,
     font-weight: 400,
     font-weight-bold: 600,
     line-height: $halfstep,
-    corrected-padding: calc(calc(1 / $eighthstep) / $halfstep),
+    corrected-padding: $scaleFactor * calc(calc(1 / $eighthstep) / $halfstep) + em,
   ),
   label: (letter-spacing: -0.004em,
     font-size: calc(calc(1 / $quarterstep) / $eighthstep) + em,
+    padding: $scaleFactor * calc(calc(1 / $quarterstep) / $eighthstep) + em,
     font-weight: 500,
     font-weight-bold: 700,
     line-height: $halfstep,
-    corrected-padding: calc(calc(calc(1 / $quarterstep) / $eighthstep) / $halfstep),
+    corrected-padding: $scaleFactor * calc(calc(calc(1 / $quarterstep) / $eighthstep) / $halfstep) + em,
   ),
   caption: (letter-spacing: -0.007em,
     font-size: calc(1 / $halfstep) + em,
+    padding: $scaleFactor * calc(1 / $halfstep) + em,
     font-weight: 400,
     font-weight-bold: 600,
     line-height: $halfstep,
-    corrected-padding: calc(calc(1 / $halfstep) / $halfstep),
+    corrected-padding: $scaleFactor * calc(calc(1 / $halfstep) / $halfstep),
   ),
   overline: (letter-spacing: 0.0618em,
     font-size: calc(1 / $halfstep) + em,
+    padding: $scaleFactor * calc(1 / $halfstep) + em,
     font-weight: 400,
     font-weight-bold: 600,
     line-height: $halfstep,
-    corrected-padding: calc(calc(1 / $halfstep) / $halfstep),
+    corrected-padding: $scaleFactor * calc(calc(1 / $halfstep) / $halfstep) + em,
   ),
 );
 
 // default element and font-weight
 $typo-default-elements: (
-  display1: (h1, 700),
-  display2: (h2, 700),
-  title1: (h3, 700),
-  title2: (h4, 600),
-  title3: (h5, 600),
-  heading: (h6, 700),
-  body: (p, 400),
   caption: (caption, 400),
+  body: (p, 400),
+  heading: (h6, 700),
+  title3: (h5, 600),
+  title2: (h4, 600),
+  title1: (h3, 700),
+  display2: (h2, 700),
+  display1: (h1, 700),
 );
 
 @function typography($size, $var) {
   @return map.get(map.get($typo-vars, $size), $var)
 }
+
+@function typography-element-map($size, $var) {
+  @return list.nth(map.get(map.get($typo-default-elements, $size), $var), 1)
+}
+
+
+
+// Style Variables
+
+// Outlined, Rounded, or Sharp.
+$icon-font-style: Outlined;
+
+// Font
+$fontSize: 1.2rem;
+
+$fontFamilyEmoji: "Apple Color Emoji",
+  "Segoe UI Emoji",
+  "Segoe UI Symbol",
+  "Noto Color Emoji";
+$fontFamilySans: system-ui,
+  "Segoe UI",
+  Roboto,
+  Oxygen,
+  Ubuntu,
+  Cantarell,
+  Helvetica,
+  Arial,
+  "Helvetica Neue",
+  sans-serif;
+$fontFamilyMonospace: ui-monospace,
+  SFMono-Regular,
+  "SF Mono",
+  Menlo,
+  Consolas,
+  "Liberation Mono",
+  monospace;
+$fontFamilyHeading: #{$fontFamilySans};
+$fontFamilyMain: #{$fontFamilySans};
+$underlineOffset: 0.2em;
+
+// Colors
+$highlight: var(#{$color-prefix}-primary);
+$highlightActive: var(#{$color-prefix}-secondary);
+$highlightHover: var(#{$color-prefix}-on-primary-container);
+
+// Border
+$borderColor: var(#{$color-prefix}-outline-variant);
+$borderWidth: 1px;
+$borderWidthThick: 4px;
+$borderStyle: solid;
+$borderRadius: var(--xs, 0.2em);
+$border: $borderWidth $borderStyle $borderColor;
+$borderHighlight: $borderWidthThick $borderStyle $highlight;
