@@ -1,0 +1,88 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+@use "../utilities" as *;
+
+button {
+  @include font($button-font-label);
+  @include border-transparent;
+  @include bg-primary;
+  @include state-layer;
+  font-weight: $button-font-weight;
+  font-size: $button-font-size;
+  border-radius: $global-border-radius;
+  padding: 0 calc($icon-padding * 2 + $icon-border-width);
+  min-height: calc($icon-height + $icon-border-width * 2);
+  min-width: calc($icon-height + $icon-border-width * 2);
+
+  display: flex;
+  align-items: center;
+  align-self: center; // prevent streching when inside a div
+
+  // Icons - only allow one at a time
+  // Icons use ::before to leave ::after open for the state layer
+  &[data-placement="left"] {
+    padding-left: 0;
+  }
+
+  &[data-placement="right"] {
+    flex-direction: row-reverse;
+    padding-right: 0;
+  }
+
+  &[data-icon]::before {
+    padding: $icon-padding;
+    top: 0;
+  }
+
+  &:not([data-placement="right"])[data-icon]::before,
+  &[data-placement="left"]::before {
+    left: 0;
+  }
+
+  &[data-placement="right"]::before {
+    right: 0;
+  }
+
+  // Button labels
+  & label {
+    line-height: 1;
+    top: 110%;
+    left: 0;
+  }
+
+  // Utilities
+  &.icon.border::before,
+  &.border {
+    @include border;
+  }
+
+  &.text {
+    @include bg-transparent;
+  }
+
+  &.large {
+    font-size: calc($button-font-size * $halfstep);
+  }
+
+  &.icon {
+    padding: 0;
+    border: none;
+    flex-direction: column;
+  }
+
+  &.icon::before {
+    @include border-transparent;
+  }
+
+  &.icon::after {
+    height: calc($icon-height);
+    width: calc($icon-height);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &.icon.border::after {
+    top: $borderWidth;
+  }
+
+}
