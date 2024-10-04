@@ -3,23 +3,28 @@
 @use "sass:math";
 @use "sass:list";
 
-//diplay1 and body are the onluy ones using 1em
+@mixin font($size) {
+  letter-spacing: typography($size, letter-spacing);
+  font-size: typography($size, font-size);
+  font-weight: typography($size, font-weight);
+  line-height: typography($size, line-height);
+}
+
+@mixin font-bold($size) {
+  letter-spacing: typography($size, letter-spacing);
+  font-size: typography($size, font-size);
+  font-weight: typography($size, font-weight-bold);
+  line-height: typography($size, line-height);
+}
 
 /* Regular families */
 @each $size, $var in $typo-vars {
 
-
   .#{$size} {
-    letter-spacing: typography($size, letter-spacing);
-    font-size: typography($size, font-size);
-    font-weight: typography($size, font-weight);
-    line-height: typography($size, line-height);
+    @include font($size);
 
     &__bold {
-      letter-spacing: typography($size, letter-spacing);
-      font-size: typography($size, font-size);
-      font-weight: typography($size, font-weight-bold);
-      line-height: typography($size, line-height);
+      @include font-bold($size);
     }
   }
 }
@@ -35,11 +40,6 @@
 
 body {
   cursor: default;
-  letter-spacing: typography(body, letter-spacing);
-  font-size: typography(body, font-size);
-  font-weight: typography(body, font-weight);
-  line-height: typography(body, line-height);
-  margin-bottom: var(--xxs);
 }
 
 .display1 {
