@@ -7,19 +7,18 @@
 
   :root {
 
-    /* Icons */
-    $icon-font-style: Outlined; // Outlined, Rounded, or Sharp.
+    /* Colors */
+    #{$prefix}-background-color: var(#{$color-prefix}-background);
+    #{$prefix}-font-color: var(#{$color-prefix}-on-background);
 
-    #{$prefix}-icon-font-family: Material Symbols #{$icon-font-style};
-    #{$prefix}-icon-font-size: 1.272;
-    #{$prefix}-icon-fill: 0; // 1 for filled, 0 for outlined
-    #{$prefix}-icon-wght: 300;
-    #{$prefix}-icon-grad: 0;
-    #{$prefix}-icon-opsz: 24;
+    #{$prefix}-highlight: $highlight;
+    #{$prefix}-highlight-active: $highlightActive;
+    #{$prefix}-highlight-hover: $highlightHover;
 
     /* Borders */
     #{$prefix}-background-color: var(#{$color-prefix}-background);
     #{$prefix}-font-color: var(#{$color-prefix}-on-background);
+    #{$prefix}-subtext-opacity: 80%;
 
     #{$prefix}-border-color: var(#{$color-prefix}-outline-variant, #727272);
     #{$prefix}-border-width: 1px;
