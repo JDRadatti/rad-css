@@ -2,6 +2,10 @@
 
 // Borders
 
+@mixin border-transparent {
+  border: $borderTransparent;
+}
+
 @mixin border-none {
   border: none;
 }
@@ -75,10 +79,5 @@
 @mixin border-radius {
   border-radius: #{$borderRadius};
 }
-
-@mixin background-img {
-  background-image: url("../placeholder.png")
-}
-
 
 // State Layers
