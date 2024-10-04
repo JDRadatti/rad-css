@@ -64,6 +64,11 @@
     justify-content: flex-end;
   }
 
+  &[data-placement="left"] {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
   &::before {
     top: 0;
   }

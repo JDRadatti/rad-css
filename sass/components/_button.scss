@@ -35,6 +35,7 @@ button {
     padding: 0;
     border: none;
     flex-direction: column;
+    gap: 0.1em;
   }
 
   &.icon::before {
@@ -56,5 +57,11 @@ button {
     margin-top: auto;
     margin-bottom: auto;
     left: calc(var(--md) * var(--halfstep));
+  }
+
+  &[data-placement="left"].icon::after {
+    margin-top: auto;
+    margin-bottom: auto;
+    right: calc(var(--md) * var(--halfstep));
   }
 }
