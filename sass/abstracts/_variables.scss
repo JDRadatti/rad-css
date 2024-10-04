@@ -19,7 +19,7 @@ $breakpoints: (
 
 // ScaleFactor controls the relative scale of spacing. Increasing scaleFactor 
 // will increase the spacing and visa versa.
-$scaleFactor: 1;
+$scaleFactor: 1; // IMP: ADJUST FOR DIFF STYLES
 
 $goldenRatio: 1.618;
 $lineHeightIns: 1em * $goldenRatio;
@@ -212,12 +212,36 @@ $typo-default-elements: (
 
 
 // Style Variables
+$global-border-radius: 10em; // IMP: ADJUST FOR DIFF STYLES
 
-// Outlined, Rounded, or Sharp.
-$icon-font-style: Outlined;
+// Button Variables
+$button-font-label: label;
+$button-font-weight: typography($button-font-label, font-weight-bold);
+$button-font-size: calc(typography($button-font-label, font-size) * $quarterstep);
+
+// Icons 
+// Add the following <link> element to <head> in html to load icons.
+// Update "Rounded" to desired icon style.
+// <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+$icon-font-style: Rounded; // Outlined, Rounded, or Sharp.
+$icon-font-family: Material Symbols $icon-font-style;
+$icon-font-size: 1.272em;
+$icon-padding: var(--sm); // IMP: ADJUST FOR DIFF STYLES
+$icon-border-width: var(--xs); // IMP: ADJUST FOR DIFF STYLES
+$icon-fill: 1; // 1 for filled, 0 for outlined
+$icon-wght: 400;
+$icon-grad: 0;
+$icon-opsz: 24;
+$icon-height: calc($icon-font-size + calc($icon-padding * 2));
+$icon-border: $icon-border-width solid var(--bg-color);
+$icon-background: inherit;
+$icon-color: inherit;
+
+// Transitions
+$transition: 0.2s ease-in-out;
 
 // Font
-$fontSize: 1.2rem;
+$fontSize: 1rem;
 
 $fontFamilyEmoji: "Apple Color Emoji",
   "Segoe UI Emoji",
@@ -256,4 +280,5 @@ $borderWidthThick: 4px;
 $borderStyle: solid;
 $borderRadius: var(--xs, 0.2em);
 $border: $borderWidth $borderStyle $borderColor;
+$borderTransparent: $borderWidth $borderStyle transparent;
 $borderHighlight: $borderWidthThick $borderStyle $highlight;
