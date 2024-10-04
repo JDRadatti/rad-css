@@ -54,6 +54,10 @@ button {
     margin-right: auto;
   }
 
+  &[data-placement="bottom"].icon::after {
+    top: calc(var(--md) * var(--halfstep));
+  }
+
   &.icon.border::after {
     top: $borderWidth;
   }
