@@ -31,6 +31,7 @@ button {
   }
 
   &.icon {
+    @include bg-transparent;
     padding: 0;
     border: none;
     flex-direction: column;
@@ -51,8 +52,9 @@ button {
     top: calc(var(--md) * var(--halfstep));
   }
 
-  &.icon.border::after {
-    top: $borderWidth;
+  &[data-placement="right"].icon::after {
+    margin-top: auto;
+    margin-bottom: auto;
+    left: calc(var(--md) * var(--halfstep));
   }
-
 }
