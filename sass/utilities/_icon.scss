@@ -98,6 +98,7 @@ button[data-icon] {
     padding: $icon-padding;
   }
 
+  &:not([data-placement="right"]),
   &[data-placement="left"] {
     padding-left: 0;
   }
