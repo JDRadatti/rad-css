@@ -1,0 +1,50 @@
+@use "../abstracts" as *;
+// Icons
+
+// Add an icon using background-image.
+// Mainly for using icons with elements that cannot contain other
+// elements, like input.
+@mixin icon-bg($icon-name) {
+  // TODO
+}
+
+// Should be used most of the time.
+// icon-name: Google fonts icon name
+// fill: int {0,1}
+@mixin icon-inline($icon-name,
+  $fill: $icon-fill,
+  $wght: $icon-wght,
+  $grad: $icon-grad,
+  $opsz: $icon-opsz,
+) {
+
+  content: attr($icon-name);
+  font-family: $icon-font-family;
+  font-variation-settings:
+    'FILL' 0,
+    'wght'$wght,
+    'GRAD'$grad,
+    'opsz'$opsz;
+  height: $icon-font-size;
+  width: $icon-font-size;
+  font-size: inherit;
+  font-style: normal;
+  display: inline-block;
+  line-height: $icon-font-size;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  text-decoration: none;
+  vertical-align: center;
+  text-align: center;
+  border-radius: $global-border-radius;
+  border: $icon-border;
+  background-color: $icon-background;
+  color: $icon-color;
+}
+
+[data-icon]::before {
+  @include icon-inline(data-icon);
+}
