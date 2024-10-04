@@ -16,13 +16,6 @@ button {
 
   align-self: center; // prevent streching when inside a div
 
-  // Button labels
-  & label {
-    line-height: 1;
-    top: 110%;
-    left: 0;
-  }
-
   // Utilities
   &.icon.border::before,
   &.border {
