@@ -29,8 +29,9 @@ $body-spacing: var(--sm);
 }
 
 article {
-  @include bg-surfacecontainerhigh;
+  @include bg-surfacecontainer;
   @include card-padding(body);
+  position: relative;
 
   header {
     @include card-header(heading);
@@ -144,8 +145,4 @@ article.outline {
 
 article.text {
   @include bg-transparent;
-}
-
-article header {
-  @include background-img;
 }
