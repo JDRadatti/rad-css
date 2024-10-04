@@ -45,6 +45,37 @@
   color: $icon-color;
 }
 
+
+// Icons - only allow one at a time
+// Icons use ::before to leave ::after open for the state layer
 [data-icon]::before {
   @include icon-inline(data-icon);
+}
+
+[data-icon] {
+  display: flex;
+  align-items: center;
+
+  &[data-placement="left"] {
+    padding-left: 0;
+  }
+
+  &[data-placement="right"] {
+    flex-direction: row-reverse;
+    padding-right: 0;
+  }
+
+  &[data-icon]::before {
+    padding: $icon-padding;
+    top: 0;
+  }
+
+  &:not([data-placement="right"])[data-icon]::before,
+  &[data-placement="left"]::before {
+    left: 0;
+  }
+
+  &[data-placement="right"]::before {
+    right: 0;
+  }
 }
