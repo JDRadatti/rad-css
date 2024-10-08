@@ -16,18 +16,30 @@
 
 @mixin border-bottom {
   border-bottom: $border;
+  border-top: none;
+  border-left: none;
+  border-right: none;
 }
 
 @mixin border-top {
   border-top: $border;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
 }
 
 @mixin border-left {
   border-left: $border;
+  border-bottom: none;
+  border-top: none;
+  border-right: none;
 }
 
 @mixin border-right {
   border-right: $border;
+  border-bottom: none;
+  border-top: none;
+  border-left: none;
 }
 
 @mixin border-thick {
