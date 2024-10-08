@@ -1,0 +1,36 @@
+@use "../abstracts" as *;
+
+header:has(nav) {
+  background-color: var(#{$prefix}-background-color);
+  @include border-bottom;
+}
+
+nav {
+  display: flex;
+  overflow: visible;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+aside nav {
+  flex-direction: column;
+
+  ul {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+nav ul li {
+  padding: var(--xxs);
+  padding-right: var(--md);
+  border-radius: $global-border-radius;
+}
