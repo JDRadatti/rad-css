@@ -1,0 +1,38 @@
+// Semantic containers with .container-fluid option
+@use "../abstracts" as *;
+
+// Horizontal Padding
+body>footer,
+body>header,
+body>main>hgroup,
+body>main>[role="document"] {
+  padding: 0 $container-padding-horizontal;
+
+  @media screen and (max-width: breakpoint(md)) {
+    & {
+      padding: 0 calc($container-padding-horizontal * $wholestep-dec);
+    }
+  }
+
+  @media screen and (max-width: breakpoint(sm)) {
+    & {
+      padding: 0 calc($container-padding-horizontal * $halfstep-dec);
+    }
+  }
+}
+
+// Vertical Padding
+body>main>hgroup,
+body>main>[role="document"] {
+  padding-top: $container-padding-vertical;
+  padding-bottom: $container-padding-vertical;
+}
+
+section {
+  padding-bottom: $section-flow;
+}
+
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}

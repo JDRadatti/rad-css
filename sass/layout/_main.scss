@@ -1,0 +1,98 @@
+// This file sets up the semantic layout for "body main"
+// 
+// The layout works as follows:
+// 
+// There should be a div with [role="document"] inside <main></main>
+// The first <aside> inside <main> automatically acts as menu(on left)
+// The second <aside> inside <main> automatically acts as sidebar(on right)
+// If no <aside> elements are present, acts as a basic document(no sidebar or menu)
+// <hgroup> inside <main> automatically acts as header for page
+
+@use "../abstracts" as *;
+
+body main {
+  display: grid;
+  grid-template-columns: $menu-width auto $sidebar-width;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "menu header sidebar"
+    "menu main sidebar";
+  overflow: auto;
+
+  // one asside
+  &:has(aside) {
+    grid-template-areas:
+      "menu header header"
+      "menu main main";
+  }
+
+  // two asside
+  &:has(aside + aside) {
+    grid-template-areas:
+      "menu header sidebar"
+      "menu main sidebar";
+  }
+
+  // no asside
+  &:not(:has(aside)) {
+    grid-template-areas:
+      "header header header"
+      "main main main";
+  }
+
+  >aside {
+    grid-area: menu;
+    position: fixed;
+    top: $navbar-height;
+    width: $menu-width;
+
+    +aside {
+      grid-area: sidebar;
+      width: $sidebar-width;
+      right: 0;
+    }
+  }
+
+  // Main content
+  &>div,
+  &>[role="document"] {
+    grid-area: main;
+  }
+
+  // Headings 
+  >hgroup {
+    padding: var(--md) 0;
+    grid-area: header;
+  }
+
+
+  // Media Queries 
+  @media screen and (max-width: breakpoint(lg)) {
+
+    // two asside
+    &:has(aside + aside) {
+      grid-template-areas:
+        "menu header header"
+        "menu main main";
+
+      >aside+aside {
+        display: none;
+      }
+    }
+  }
+
+  @media screen and (max-width: breakpoint(md)) {
+
+    // at least one asside
+    &:has(aside + aside),
+    &:has(aside) {
+      grid-template-areas:
+        "header header header"
+        "main main main";
+
+      >aside {
+        display: none;
+      }
+    }
+  }
+}

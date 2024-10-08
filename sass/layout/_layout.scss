@@ -1,0 +1,33 @@
+// Semantic Containers
+@use "../abstracts" as *;
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "main" 
+    "footer";
+  align-items: start;
+
+  >header {
+    grid-area: header;
+    z-index: 100;
+  }
+
+  >main {
+    grid-area: main;
+  }
+
+  >footer {
+    grid-area: footer;
+  }
+}
+
+
+@if $sticky-header ==true {
+  body > header {
+    position: sticky;
+    top: 0;
+  }
+}

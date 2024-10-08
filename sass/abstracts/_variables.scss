@@ -9,8 +9,8 @@ $breakpoints: (
   sm: 576px,
   md: 768px,
   lg: 992px,
-  xl: 1200px,
-  xxl: 1400px,
+  xl: 1280px,
+  xxl: 1536px,
 );
 
 @function breakpoint($size) {
@@ -227,13 +227,13 @@ $icon-font-style: Rounded; // Outlined, Rounded, or Sharp.
 $icon-font-family: Material Symbols $icon-font-style;
 $icon-font-size: 1.272em;
 $icon-padding: var(--sm); // IMP: ADJUST FOR DIFF STYLES
-$icon-border-width: var(--xs); // IMP: ADJUST FOR DIFF STYLES
+$icon-border-width: var(--xxs); // IMP: ADJUST FOR DIFF STYLES
 $icon-fill: 1; // 1 for filled, 0 for outlined
 $icon-wght: 400;
 $icon-grad: 0;
 $icon-opsz: 24;
 $icon-height: calc($icon-font-size + calc($icon-padding * 2));
-$icon-border: $icon-border-width solid var(--bg-color);
+$icon-border: $icon-border-width solid transparent;
 $icon-background: inherit;
 $icon-color: inherit;
 
@@ -282,3 +282,16 @@ $borderRadius: var(--xs, 0.2em);
 $border: $borderWidth $borderStyle $borderColor;
 $borderTransparent: $borderWidth $borderStyle transparent;
 $borderHighlight: $borderWidthThick $borderStyle $highlight;
+
+// Layout
+$menu-width: 210px;
+$sidebar-width: 210px;
+
+// Navbar
+$navbar-height: 100px;
+$sticky-header: true;
+
+// Layout Padding
+$container-padding-horizontal: var(--xl);
+$container-padding-vertical: var(--md);
+$section-flow: var(--lg);
