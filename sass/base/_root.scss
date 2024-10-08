@@ -26,7 +26,7 @@
 
   background-color: var(#{$prefix}-background-color);
   color: var(#{$prefix}-font-color);
-  --state-color: #000;
+  --state-color: var(#{$prefix}-font-color);
   --bg-color: var(#{$prefix}-background-color);
 
   /* Support for all WebKit browsers. */
