@@ -108,6 +108,6 @@ button[data-icon] {
   }
 }
 
-:not(button)[data-icon] {
+:not(button, li)[data-icon] {
   padding: 0;
 }
