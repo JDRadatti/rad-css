@@ -1,9 +1,9 @@
 // Prefix for all non-color variables.
-$prefix: --gcss;
+$prefix: --kiss;
 
 // This project uses --md-sys- as the color prefix in order to integrate
 // with material design.
-$color-prefix: --md-sys;
+$color-prefix: --md-sys-color;
 
 // Dynamic Card Padding adjusts the card padding based on largest font size automatically.
 $dynamic-card-padding: true;
