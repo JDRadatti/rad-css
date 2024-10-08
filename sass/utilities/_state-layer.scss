@@ -7,6 +7,7 @@
 @mixin state-layer {
   & {
     position: relative;
+    cursor: pointer;
   }
 
   &::after {
