@@ -179,10 +179,11 @@ blockquote {
   font-size: 1em;
   line-height: var(--wholestep);
   @include border-thick-left;
+}
 
-  footer {
-    opacity: var(#{$prefix}-subtext-opacity);
-  }
+blockquote footer,
+hgroup :last-child {
+  opacity: var(#{$prefix}-subtext-opacity);
 }
 
 a {
