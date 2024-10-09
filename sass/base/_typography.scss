@@ -35,6 +35,7 @@
     font-size: typography($size, font-size);
     font-weight: list.nth($element, 2);
     line-height: typography($size, line-height);
+    margin-bottom: var(--xxs);
   }
 }
 
