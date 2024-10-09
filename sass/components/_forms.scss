@@ -216,10 +216,6 @@ fieldset:has(label [type="checkbox"]) {
   opacity: 100%;
 }
 
-input {
-  transition: 0.2s outline ease-in-out;
-}
-
 input :not([type="radio"]),
 input :not([type="checkbox"]) {
   margin-bottom: var(--sm);
@@ -229,6 +225,9 @@ input[type="text"] {
   width: 100%;
   margin-bottom: var(--xs);
   margin-top: var(--md);
+  padding: var(--sm);
+  @include border;
+  border-radius: $input-border-radius;
 }
 
 textarea {
@@ -237,19 +236,18 @@ textarea {
   resize: vertical;
   border-radius: $input-border-radius;
   border: $input-border;
-  transition: 0.2s outline ease-in-out;
   padding: var(--md);
   padding-top: .786164em;
   width: 100%;
   min-height: 1em;
-  background-color: $input-color-element-bg;
   color: $input-color-font;
   margin-bottom: var(--sm);
 }
 
+[type="text"]:not([aria-invalid]):focus,
 textarea:focus {
   outline: $input-border-active;
-  background-color: $input-color-element-bg;
+  outline-color: $borderColor;
 }
 
 [aria-invalid="true"]:focus,
@@ -262,13 +260,6 @@ textarea:focus {
   outline: $input-border-valid;
 }
 
-[type="text"] {
-  padding: var(--sm);
-  @include border;
-  border-radius: $input-border-radius;
-  border-style: solid;
-}
-
 [aria-invalid="true"][aria-describedby]+small {
   color: var(--md-sys-color-error);
 }
@@ -278,9 +269,9 @@ textarea:focus {
 }
 
 [aria-invalid="true"] {
-  border-color: var(--md-sys-color-error);
+  border-color: var(--md-sys-color-error) !important;
 }
 
 [aria-invalid="false"] {
-  border-color: var(--md-sys-color-success-color);
+  border-color: var(--md-sys-color-success-color) !important;
 }
