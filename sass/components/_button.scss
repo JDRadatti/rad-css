@@ -7,14 +7,16 @@ button {
   @include border-transparent;
   @include bg-primary;
   @include state-layer;
-  font-weight: $button-font-weight;
-  font-size: $button-font-size;
-  border-radius: $global-border-radius;
-  padding: 0 calc($icon-padding * 2 + $icon-border-width);
-  min-height: calc($icon-height + $icon-border-width * 2);
-  min-width: calc($icon-height + $icon-border-width * 2);
 
-  align-self: center; // prevent streching when inside a div
+  & {
+    font-weight: $button-font-weight;
+    font-size: $button-font-size;
+    border-radius: $global-border-radius;
+    padding: 0 calc($icon-padding * 2 + $icon-border-width);
+    min-height: calc($icon-height + $icon-border-width * 2);
+    min-width: calc($icon-height + $icon-border-width * 2);
+    align-self: center; // prevent streching when inside a div
+  }
 
   // Utilities
   &.icon.border::before,
