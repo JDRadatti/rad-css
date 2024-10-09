@@ -1,0 +1,33 @@
+@use "../abstracts" as *;
+@use "../utilities" as *;
+
+details {
+
+  >summary {
+    padding: var(--sm) 0;
+    cursor: pointer;
+    list-style: none;
+    color: var(#{$color-prefix}-secondary);
+    display: flex;
+    flex-direction: row;
+    align-items: space-between;
+    justify-content: space-between;
+  }
+
+  >summary:after {
+    @include icon-inline('keyboard_arrow_right');
+    transition: transform $transition;
+  }
+
+  &[open]>summary:after {
+    transform: rotate(90deg);
+  }
+
+  >summary:focus {
+    color: var(#{$color-prefix}-primary);
+  }
+
+  >p {
+    padding-bottom: var(--sm);
+  }
+}
