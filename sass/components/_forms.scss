@@ -22,7 +22,7 @@ input {
   border-radius: $input-border-radius;
   vertical-align: middle;
   cursor: pointer;
-  transition: 0.2s background-color ease-in-out;
+  transition: background-color $transition;
 
   @include border;
 }
@@ -114,8 +114,8 @@ fieldset:has(label [type="checkbox"]) {
 }
 
 [role="switch"] {
-  transition: 0.2s background-position ease-in-out,
-    0.2s background-color ease-in-out;
+  transition: background-position $transition,
+    background-color $transition;
   border: none !important;
   background-color: $input-color-active;
   width: 2.35em;
@@ -126,7 +126,7 @@ fieldset:has(label [type="checkbox"]) {
 }
 
 [role="switch"]::after {
-  transition: 0.2s left ease-in-out;
+  transition: left $transition;
   content: " ";
   position: absolute;
   background-color: $input-color-onsurface;
@@ -186,7 +186,7 @@ fieldset:has(label [type="checkbox"]) {
   cursor: pointer;
   border: $input-border-hidden;
   box-shadow: none;
-  transition: 0.2s transform ease-in-out;
+  transition: transform $transition;
 }
 
 [type="range"]::-moz-range-thumb {
@@ -197,7 +197,7 @@ fieldset:has(label [type="checkbox"]) {
   cursor: pointer;
   border: $input-border-hidden;
   box-shadow: none;
-  transition: 0.2s transform ease-in-out;
+  transition: transform $transition;
 }
 
 [type="range"]:active::-webkit-slider-thumb {
