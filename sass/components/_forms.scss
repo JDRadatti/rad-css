@@ -1,8 +1,6 @@
 @use "../abstracts" as *;
 @use "../base" as *;
 
-
-// Input + Forms
 textarea,
 label,
 input {
@@ -10,38 +8,6 @@ input {
   font-size: inherit;
   font-weight: inherit;
   line-height: 1;
-
-  --golden-icon-style: 'Material Symbols Outlined';
-  --icon-checkbox: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(255, 255, 255)' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
-  --icon-circle: url('data:image/svg+xml,<svg x="0" y="0" width="16px" height="16px" fill="%23e8eaed" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="8" fill="%23FFFFFF"/></svg>');
-
-  --golden-background-color: var(--md-sys-color-background);
-  --golden-font-color: var(--md-sys-color-on-background);
-
-  --golden-border-color: var(--md-sys-color-outline-variant, #727272);
-  --golden-border-width: 1px;
-  --golden-border: var(--golden-border-width) solid var(--golden-border-color);
-  --golden-border-transparent: var(--golden-border-width) solid transparent;
-
-  --golden-border-radius: 0.2em;
-  --golden-border-radius-circle: 50em;
-
-  --golden-input-color-onsurface: white;
-  --golden-input-color-font: var(--md-sys-color-on-surface);
-  --golden-input-color-element-bg: var(--md-sys-color-surface);
-  --golden-input-color-element-bg-focus: var(--md-sys-color-surface-container-lowest);
-  --golden-input-color-surfacevariant: var(--md-sys-color-on-surface-variant);
-  --golden-input-color-surface: var(--golden-border-color);
-  --golden-input-color-active: var(--md-sys-color-primary);
-  --golden-input-color-accent: var(--md-sys-color-primary-container);
-
-  --golden-input-border-width: 2px;
-  --golden-input-border: var(--golden-input-border-width) solid var(--golden-input-color-surface);
-  --golden-input-border-active: var(--golden-input-border-width) solid var(--golden-input-color-active);
-  --golden-input-border-hidden: var(--golden-input-border-width) solid var(--golden-background-color);
-  --golden-input-outline: var(--golden-input-border-width) solid var(--golden-input-color-accent);
-  --golden-input-border-invalid: var(--golden-input-border-width) solid var(--md-sys-color-error);
-  --golden-input-border-valid: var(--golden-input-border-width) solid var(--md-sys-color-success-color);
 }
 
 
@@ -53,15 +19,16 @@ input {
   height: 1.25em;
   margin-top: -.125em;
   margin-inline-end: var(--xs);
-  border: var(--golden-input-border);
-  border-radius: var(--golden-border-radius);
+  border-radius: $input-border-radius;
   vertical-align: middle;
   cursor: pointer;
   transition: 0.2s background-color ease-in-out;
+
+  @include border;
 }
 
 [type="radio"] {
-  border-radius: var(--golden-border-radius-circle);
+  border-radius: $border-radius-circle;
   position: relative;
 }
 
@@ -70,10 +37,10 @@ input {
   position: absolute;
   top: 25%;
   right: 22.5%;
-  background-color: var(--golden-input-color-onsurface);
+  background-color: $input-color-onsurface;
   height: 50%;
   width: 50%;
-  border-radius: var(--golden-border-radius-circle);
+  border-radius: $border-radius-circle;
   z-index: 2;
 }
 
@@ -84,9 +51,9 @@ input {
 [type="radio"]:checked,
 [type="radio"]:checked:active,
 [type="radio"]:checked:focus {
-  background-color: var(--golden-input-color-active);
-  border: var(--golden-input-border-active);
-  background-image: var(--icon-checkbox);
+  background-color: $input-color-active;
+  border: $input-border-active;
+  background-image: $icon-checkbox;
   background-position: center;
   background-size: 0.80em auto;
   background-repeat: no-repeat;
@@ -104,13 +71,13 @@ textarea:disabled,
 [type="radio"]:checked:focus,
 [type="radio"]:checked:active {
   background-size: 0.5em;
-  border-radius: var(--golden-border-radius-circle);
+  border-radius: $border-radius-circle;
 }
 
 [type="radio"]:focus,
 [type="checkbox"]:focus {
-  outline: var(--golden-input-outline);
-  border: var(--golden-input-border-active);
+  outline: $input-outline;
+  border: $input-border-active;
 }
 
 legend {
@@ -150,7 +117,7 @@ fieldset:has(label [type="checkbox"]) {
   transition: 0.2s background-position ease-in-out,
     0.2s background-color ease-in-out;
   border: none !important;
-  background-color: var(--golden-input-color);
+  background-color: $input-color-active;
   width: 2.35em;
   height: 1.25em;
   margin-top: 0;
@@ -162,8 +129,8 @@ fieldset:has(label [type="checkbox"]) {
   transition: 0.2s left ease-in-out;
   content: " ";
   position: absolute;
-  background-color: var(--golden-input-color-onsurface);
-  border-radius: var(--golden-border-radius-circle);
+  background-color: $input-color-onsurface;
+  border-radius: $border-radius-circle;
   z-index: 2;
 
   height: 1em;
@@ -180,19 +147,19 @@ fieldset:has(label [type="checkbox"]) {
 [role="switch"]:checked:active,
 [role="switch"]:checked:focus,
 [role="switch"] {
-  background-color: var(--golden-input-color-active);
+  background-color: $input-color-active;
   background-image: none;
   background-position: 90% 50%;
   background-repeat: no-repeat;
   background-size: 1em;
-  border-radius: var(--golden-border-radius-circle);
+  border-radius: $border-radius-circle;
 }
 
 [role="switch"]:active,
 [role="switch"]:focus,
 [role="switch"] {
   background-position: 10% 50%;
-  background-color: var(--golden-input-color-surface);
+  background-color: $input-color-surface;
 }
 
 [type="range"] {
@@ -200,8 +167,8 @@ fieldset:has(label [type="checkbox"]) {
   appearance: none;
   width: 100%;
   height: 7px;
-  background-color: var(--golden-input-color-surface);
-  border-radius: var(--golden-border-radius-circle);
+  background-color: $input-color-surface;
+  border-radius: $border-radius-circle;
   border: none;
   box-shadow: none;
   display: flex;
@@ -214,10 +181,10 @@ fieldset:has(label [type="checkbox"]) {
   appearance: none;
   height: 25px;
   width: 25px;
-  border-radius: var(--golden-border-radius-circle);
-  background-color: var(--golden-input-color-surface);
+  border-radius: $border-radius-circle;
+  background-color: $input-color-surface;
   cursor: pointer;
-  border: var(--golden-input-border-hidden);
+  border: $input-border-hidden;
   box-shadow: none;
   transition: 0.2s transform ease-in-out;
 }
@@ -225,27 +192,27 @@ fieldset:has(label [type="checkbox"]) {
 [type="range"]::-moz-range-thumb {
   height: 25px;
   width: 25px;
-  border-radius: var(--golden-border-radius-circle);
-  background-color: var(--golden-input-color-surface);
+  border-radius: $border-radius-circle;
+  background-color: $input-color-surface;
   cursor: pointer;
-  border: var(--golden-input-border-hidden);
+  border: $input-border-hidden;
   box-shadow: none;
   transition: 0.2s transform ease-in-out;
 }
 
 [type="range"]:active::-webkit-slider-thumb {
   transform: scale(1.3);
-  background-color: var(--golden-input-color-active);
+  background-color: $input-color-active;
 }
 
 [type="range"]:active::-moz-range-thumb {
   transform: scale(1.3);
-  background-color: var(--golden-input-color-active);
+  background-color: $input-color-active;
 }
 
 [type="range"]:active,
 [type="range"]:focus {
-  background-color: var(--golden-input-color-surface);
+  background-color: $input-color-surface;
   opacity: 100%;
 }
 
@@ -268,38 +235,37 @@ textarea {
   -webkit-appearance: none;
   appearance: none;
   resize: vertical;
-  border-radius: var(--golden-border-radius);
-  border: var(--golden-border);
+  border-radius: $input-border-radius;
+  border: $input-border;
   transition: 0.2s outline ease-in-out;
   padding: var(--md);
   padding-top: .786164em;
   width: 100%;
   min-height: 1em;
-  background-color: var(--golden-input-color-element-bg);
-  color: var(--golden-input-color-font);
+  background-color: $input-color-element-bg;
+  color: $input-color-font;
   margin-bottom: var(--sm);
 }
 
 textarea:focus {
-  outline: var(--golden-input-border-active);
-  background-color: var(--golden-input-color-element-bg);
+  outline: $input-border-active;
+  background-color: $input-color-element-bg;
 }
 
 [aria-invalid="true"]:focus,
 [aria-invalid="true"]:active {
-  outline: var(--golden-input-border-invalid);
+  outline: $input-border-invalid;
 }
 
 [aria-invalid="false"]:focus,
 [aria-invalid="false"]:active {
-  outline: var(--golden-input-border-valid);
-  background-image: var(--golden-icon-invalid);
+  outline: $input-border-valid;
 }
 
 [type="text"] {
   padding: var(--sm);
-  border-radius: var(--golden-border-radius);
-  border: var(--golden-border);
+  @include border;
+  border-radius: $input-border-radius;
   border-style: solid;
 }
 

@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "sass:math";
 @use "sass:list";
-@use "config" as *;
+@use "../abstracts" as *;
 
 // Breakpoints
 $breakpoints: (
@@ -295,3 +295,24 @@ $sticky-header: true;
 $container-padding-horizontal: var(--xl);
 $container-padding-vertical: var(--md);
 $section-flow: var(--lg);
+
+// Input + Forms
+$icon-checkbox: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(255, 255, 255)' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+$border-radius-circle: 50em;
+
+$input-border-radius: 0.2em;
+$input-border-width: 2px;
+$input-color-surface: $borderColor;
+$input-color-onsurface: white;
+$input-color-font: var(--md-sys-color-on-surface);
+$input-color-element-bg: var(--md-sys-color-surface);
+$input-color-active: var(--md-sys-color-primary);
+$input-color-accent: var(--md-sys-color-primary-container);
+
+$input-outline: $input-border-width solid $input-color-accent;
+$input-border: $input-border-width solid $input-color-surface;
+$input-border-active: $input-border-width solid $input-color-active;
+$input-border-hidden: $input-border-width solid var(--bg-color);
+$input-border-invalid: $input-border-width solid var(--md-sys-color-error);
+$input-border-valid: $input-border-width solid var(--md-sys-color-success-color);
+
