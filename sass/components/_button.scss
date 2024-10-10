@@ -3,12 +3,12 @@
 @use "../utilities" as *;
 
 button {
-  @include font($button-font-label);
-  @include border-transparent;
-  @include bg-primary;
-  @include state-layer;
 
   & {
+    @include font($button-font-label);
+    @include border-transparent;
+    @include bg-primary;
+    @include state-layer;
     font-weight: $button-font-weight;
     font-size: $button-font-size;
     border-radius: $global-border-radius;
