@@ -89,7 +89,7 @@ details[role="dropdown"] {
     li {
       @include border-radius;
       @include state-layer;
-      padding: var(--xs);
+      padding: var(--xs) var(--sm);
       margin-left: $wholestep-dec + em;
       margin-right: $wholestep-dec + em;
       white-space: nowrap;
