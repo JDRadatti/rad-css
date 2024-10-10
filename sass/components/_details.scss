@@ -37,33 +37,36 @@ details {
 
 select,
 details[role="dropdown"] {
+  @include font(body);
+  @include border;
+  @include border-radius;
+  position: relative;
+  transition: background-color $transition;
+  background-color: var(--bg-color);
+  padding: 0 var(--xs);
+  width: 0;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  min-height: calc($icon-height + $icon-border-width * 2);
+  color: var(#{$color-prefix}-secondary);
 
-  & {
-    @include font(body);
-    @include border;
-    @include border-radius;
-    position: relative;
-    width: 100%;
-    transition: background-color $transition;
-    background-color: var(--bg-color);
-    padding: 0 var(--xs);
-    min-height: calc($icon-height + $icon-border-width * 2);
-    min-width: calc($icon-height + $icon-border-width * 2);
-    color: var(#{$color-prefix}-secondary);
+  &:focus {
+    color: var(#{$color-prefix}-primary);
+  }
 
-    &:focus {
-      color: var(#{$color-prefix}-primary);
-    }
-
-    &[open] {
-      outline: $input-outline;
-      background-color: white;
-    }
+  &[open] {
+    outline: $input-outline;
+    background-color: white;
   }
 
   >summary {
     padding: var(--sm) 0;
+
+    &:after {
+      transform: rotate(90deg);
+    }
   }
+
 
   ol,
   ul {
@@ -72,6 +75,8 @@ details[role="dropdown"] {
     left: 0;
     list-style: none;
     width: 100%;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
     z-index: 10;
     margin: 0;
     margin-top: 2px;
@@ -86,6 +91,7 @@ details[role="dropdown"] {
       padding: var(--xs);
       margin-left: $wholestep-dec + em;
       margin-right: $wholestep-dec + em;
+      white-space: nowrap;
     }
   }
 
@@ -104,8 +110,13 @@ summary::-webkit-details-marker {
 select {
   -webkit-appearance: none;
   appearance: none;
+  padding-inline-end: 2em;
 
   &:focus {
     outline: $input-outline;
   }
+}
+
+select {
+  @include icon-bg-right($icon-chevron-down);
 }
