@@ -6,7 +6,7 @@ details {
 
   >summary {
     text-align: left;
-    padding: var(--xxs) 0;
+    padding: 0;
     cursor: pointer;
     list-style: none;
     color: var(#{$color-prefix}-secondary);
@@ -50,6 +50,10 @@ details[role="dropdown"] {
   min-height: calc($icon-height + $icon-border-width * 2);
   color: var(#{$color-prefix}-secondary);
 
+  >summary {
+    height: calc($icon-height + $icon-border-width * 2);
+  }
+
   &:focus {
     color: var(#{$color-prefix}-primary);
   }
@@ -59,12 +63,8 @@ details[role="dropdown"] {
     background-color: $input-color-element-bg-focus;
   }
 
-  >summary {
-    padding: var(--sm) 0;
-
-    &:after {
-      transform: rotate(90deg);
-    }
+  >summary:after {
+    transform: rotate(90deg);
   }
 
 
@@ -79,7 +79,7 @@ details[role="dropdown"] {
     min-width: fit-content;
     z-index: 10;
     margin: 0;
-    margin-top: var(--xxs);
+    margin-top: 0.5rem;
     padding: var(--xs) 0;
     display: flex;
     flex-direction: column;
@@ -99,7 +99,7 @@ details[role="dropdown"] {
 
   // Utilities
   &.text {
-    border: none;
+    @include border-transparent;
   }
 
 }
