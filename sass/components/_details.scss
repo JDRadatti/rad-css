@@ -1,16 +1,18 @@
 @use "../abstracts" as *;
 @use "../utilities" as *;
+@use "../base" as *;
 
 details {
 
   >summary {
-    padding: var(--sm) 0;
+    text-align: left;
+    padding: var(--xxs) 0;
     cursor: pointer;
     list-style: none;
     color: var(#{$color-prefix}-secondary);
     display: flex;
     flex-direction: row;
-    align-items: space-between;
+    align-items: center;
     justify-content: space-between;
   }
 
@@ -29,5 +31,81 @@ details {
 
   >p {
     padding-bottom: var(--sm);
+    padding-top: var(--sm);
+  }
+}
+
+select,
+details[role="dropdown"] {
+
+  & {
+    @include font(body);
+    @include border;
+    @include border-radius;
+    position: relative;
+    width: 100%;
+    transition: background-color $transition;
+    background-color: var(--bg-color);
+    padding: 0 var(--xs);
+    min-height: calc($icon-height + $icon-border-width * 2);
+    min-width: calc($icon-height + $icon-border-width * 2);
+    color: var(#{$color-prefix}-secondary);
+
+    &:focus {
+      color: var(#{$color-prefix}-primary);
+    }
+
+    &[open] {
+      outline: $input-outline;
+      background-color: white;
+    }
+  }
+
+  >summary {
+    padding: var(--sm) 0;
+  }
+
+  ol,
+  ul {
+    @include border-radius;
+    position: absolute;
+    left: 0;
+    list-style: none;
+    width: 100%;
+    z-index: 10;
+    margin: 0;
+    margin-top: 2px;
+    padding: var(--xs) 0;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+
+    li {
+      @include border-radius;
+      @include state-layer;
+      padding: var(--xs);
+      margin-left: $wholestep-dec + em;
+      margin-right: $wholestep-dec + em;
+    }
+  }
+
+
+  // Utilities
+  &.text {
+    border: none;
+  }
+
+}
+
+summary::-webkit-details-marker {
+  display: none
+}
+
+select {
+  -webkit-appearance: none;
+  appearance: none;
+
+  &:focus {
+    outline: $input-outline;
   }
 }
