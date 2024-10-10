@@ -9,6 +9,8 @@ input {
   font-size: inherit;
   font-weight: inherit;
   line-height: 1;
+
+  transition: background-color $transition;
 }
 
 
@@ -245,15 +247,18 @@ textarea {
 textarea:focus {
   outline: $input-border-active;
   outline-color: $borderColor;
+  background-color: $input-color-element-bg-focus;
 }
 
 [aria-invalid="true"]:focus,
 [aria-invalid="true"]:active {
+  background-color: $input-color-element-bg-focus;
   outline: $input-border-invalid;
 }
 
 [aria-invalid="false"]:focus,
 [aria-invalid="false"]:active {
+  background-color: $input-color-element-bg-focus;
   outline: $input-border-valid;
 }
 
