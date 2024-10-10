@@ -309,6 +309,7 @@ $input-color-font: var(--md-sys-color-on-surface);
 $input-color-element-bg: var(--md-sys-color-surface);
 $input-color-active: var(--md-sys-color-primary);
 $input-color-accent: var(--md-sys-color-primary-container);
+$input-color-element-bg-focus: var(#{$color-prefix}-surface-container-lowest);
 
 $input-outline: $input-border-width solid $input-color-accent;
 $input-border: $input-border-width solid $input-color-surface;
