@@ -12,14 +12,29 @@ nav {
   justify-content: space-between;
   margin: 0 auto;
 
-  ol,
-  ul {
+  &:has(details[role="dropdown"]) {
+
+    >ol,
+    >ul {
+      margin-top: var(--xxs);
+      margin-bottom: var(--xxs);
+    }
+  }
+
+  >ol,
+  >ul {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     list-style: none;
     margin-left: 0;
+
+    >li {
+      padding: var(--xxs);
+      padding-right: var(--md);
+      border-radius: $global-border-radius;
+    }
   }
 }
 
@@ -30,10 +45,4 @@ aside nav {
     align-items: flex-start;
     flex-direction: column;
   }
-}
-
-nav ul li {
-  padding: var(--xxs);
-  padding-right: var(--md);
-  border-radius: $global-border-radius;
 }
