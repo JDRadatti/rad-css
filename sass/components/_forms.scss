@@ -1,5 +1,6 @@
 @use "../abstracts" as *;
 @use "../base" as *;
+@use "../utilities" as *;
 
 textarea,
 label,
@@ -53,10 +54,7 @@ input {
 [type="radio"]:checked:focus {
   background-color: $input-color-active;
   border: $input-border-active;
-  background-image: $icon-checkbox;
-  background-position: center;
-  background-size: 0.80em auto;
-  background-repeat: no-repeat;
+  @include icon-bg-center($icon-checkbox);
 }
 
 label[aria-disabled="true"],
