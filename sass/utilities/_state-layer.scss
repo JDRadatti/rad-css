@@ -5,10 +5,8 @@
 // elements using state layer should not use ::after.
 
 @mixin state-layer {
-  & {
-    position: relative;
-    cursor: pointer;
-  }
+  position: relative;
+  cursor: pointer;
 
   &::after {
     content: '';
