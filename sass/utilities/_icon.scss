@@ -57,6 +57,18 @@
   color: $icon-color;
 }
 
+// Icons as a class (mainly for tooltips, buttons with two icons, and dropdowns)
+:has(>.data-icon) {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+
+  &.vertical {
+    padding-left: var(--xs);
+    padding-right: var(--xs);
+    flex-direction: column;
+  }
+}
 
 // Icons - only allow one at a time
 // Icons use ::before to leave ::after open for the state layer
