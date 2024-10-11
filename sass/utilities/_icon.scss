@@ -151,3 +151,7 @@ button[data-icon] {
   font-variation-settings:
     'fill' 0;
 }
+
+.data-icon {
+  @include icon-inline(none);
+}
