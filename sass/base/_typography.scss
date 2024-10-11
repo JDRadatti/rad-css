@@ -190,6 +190,13 @@ hr {
   @include border-bottom;
 }
 
+:not(aside)>nav>ul>hr {
+  width: 1px;
+  height: 100%;
+  opacity: 0.5;
+  @include border-right;
+}
+
 @media screen and (max-width: breakpoint(md)) {
 
   h1,
