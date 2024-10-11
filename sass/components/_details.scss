@@ -19,6 +19,7 @@ details {
     &:after {
       @include icon-inline('keyboard_arrow_right');
       transition: transform $transition;
+      margin-left: auto;
     }
 
     &:focus {
