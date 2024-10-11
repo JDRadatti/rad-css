@@ -45,7 +45,6 @@ details[role="dropdown"] {
   transition: background-color $transition;
   background-color: var(--bg-color);
   padding: 0 var(--xs);
-  width: 0;
   min-width: -moz-fit-content;
   min-width: fit-content;
   min-height: calc($icon-height + $icon-border-width * 2);
@@ -89,7 +88,7 @@ details[role="dropdown"] {
     position: absolute;
     left: 0;
     list-style: none;
-    width: 125%;
+    width: 100%;
     min-width: -moz-fit-content;
     min-width: fit-content;
     z-index: 10;
