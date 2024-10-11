@@ -227,6 +227,7 @@ $icon-font-style: Rounded; // Outlined, Rounded, or Sharp.
 $icon-font-family: Material Symbols $icon-font-style;
 $icon-font-size: 1.272em;
 $icon-padding: var(--sm); // IMP: ADJUST FOR DIFF STYLES
+$icon-inline-padding: var(--sm); // IMP: ADJUST FOR DIFF STYLES
 $icon-border-width: var(--xxs); // IMP: ADJUST FOR DIFF STYLES
 $icon-fill: 1; // 1 for filled, 0 for outlined
 $icon-wght: 400;

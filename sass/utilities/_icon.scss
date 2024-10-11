@@ -103,6 +103,23 @@
   }
 }
 
+:not(button, summary)[data-icon] {
+
+  &:not([data-placement="right"])::before,
+  &[data-placement="left"]::before {
+    padding-right: $icon-inline-padding;
+  }
+
+  &[data-placement="right"]::before {
+    padding-left: $icon-inline-padding;
+  }
+
+  &[data-placement="top"]::before,
+  &[data-placement="bottom"]::before {
+    padding: 0;
+  }
+}
+
 // Icon Padding
 button[data-icon] {
 
