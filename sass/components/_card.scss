@@ -54,6 +54,7 @@ article {
   // h = line-height of x
   // padding-left/right/bottom: x
   // padding-top/border-radius: x/h
+  article:has(>header),
   article:has(.heading),
   article:has(h6) {
     @include card-padding(heading);
@@ -69,7 +70,7 @@ article {
 
   article:has(.title3),
   article:has(h5) {
-    @include card-padding(title3);
+    @include card-padding(title1);
 
 
     & header {
