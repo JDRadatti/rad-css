@@ -51,11 +51,6 @@ button {
     margin-right: auto;
   }
 
-  &:has(>.data-icon) {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
   &[data-placement="bottom"].icon::after {
     top: calc(var(--md) * var(--halfstep));
   }
@@ -70,5 +65,10 @@ button {
     margin-top: auto;
     margin-bottom: auto;
     right: calc(var(--md) * var(--halfstep));
+  }
+
+  &:has(>.data-icon) {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
