@@ -120,23 +120,6 @@
   }
 }
 
-// Icon Padding
-button[data-icon] {
-
-  &::before {
-    padding: $icon-padding;
-  }
-
-  &:not([data-placement="right"]),
-  &[data-placement="left"] {
-    padding-left: 0;
-  }
-
-  &[data-placement="right"] {
-    padding-right: 0;
-  }
-}
-
 :not(button, li)[data-icon] {
   padding: 0;
 }

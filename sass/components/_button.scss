@@ -2,6 +2,8 @@
 @use "../base" as *;
 @use "../utilities" as *;
 
+$button-p: calc($icon-padding * 2 + $icon-border-width);
+
 button {
 
   & {
@@ -12,14 +14,13 @@ button {
     font-weight: $button-font-weight;
     font-size: $button-font-size;
     border-radius: $global-border-radius;
-    padding: 0 calc($icon-padding * 2 + $icon-border-width);
+    padding: 0 $button-p;
     min-height: calc($icon-height + $icon-border-width * 2);
     min-width: calc($icon-height + $icon-border-width * 2);
     align-self: center; // prevent streching when inside a div
   }
 
   // Utilities
-  &.icon.border::before,
   &.border {
     @include border;
   }
@@ -32,43 +33,38 @@ button {
     font-size: calc($button-font-size * $halfstep);
   }
 
-  &.icon {
-    @include bg-transparent;
-    padding: 0;
-    border: none;
-    flex-direction: column;
-    gap: 0.1em;
-  }
-
-  &.icon::before {
-    @include border-transparent;
-  }
-
-  &.icon::after {
-    height: calc($icon-height);
-    width: calc($icon-height);
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  &[data-placement="bottom"].icon::after {
-    top: calc(var(--md) * var(--halfstep));
-  }
-
-  &[data-placement="right"].icon::after {
-    margin-top: auto;
-    margin-bottom: auto;
-    left: calc(var(--md) * var(--halfstep));
-  }
-
-  &[data-placement="left"].icon::after {
-    margin-top: auto;
-    margin-bottom: auto;
-    right: calc(var(--md) * var(--halfstep));
-  }
-
   &:has(>.data-icon) {
     padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+// Button Icon Padding
+button[data-icon] {
+
+  &::before {
+    padding: $icon-padding;
+  }
+
+  &[data-placement="top"],
+  &[data-placement="bottom"] {
+    padding: $button-p calc(2 * $button-p);
+  }
+
+  &[data-placement="bottom"] {
+    padding-bottom: 0;
+  }
+
+  &[data-placement="top"] {
+    padding-top: 0;
+  }
+
+  &:not([data-placement="right"], [data-placement="top"], [data-placement="bottom"]),
+  &[data-placement="left"] {
+    padding-left: 0;
+  }
+
+  &[data-placement="right"] {
     padding-right: 0;
   }
 }
