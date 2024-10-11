@@ -33,7 +33,7 @@
   content: $icon-name;
   font-family: $icon-font-family;
   font-variation-settings:
-    'FILL' 0,
+    'FILL'$fill,
     'wght'$wght,
     'GRAD'$grad,
     'opsz'$opsz;
@@ -139,4 +139,15 @@ button[data-icon] {
 
 :not(button, li)[data-icon] {
   padding: 0;
+}
+
+// Utilities
+[data-icon][data-type="filled"]:before {
+  font-variation-settings:
+    'FILL' 1;
+}
+
+[data-icon][data-type="outlined"]:before {
+  font-variation-settings:
+    'fill' 0;
 }
