@@ -326,3 +326,25 @@ $shadow-2: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.
 $shadow-3: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
 $shadow-4: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
 $shadow-5: 0px 8px 10px -6px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);
+
+// Links
+$default-link-type: primary;
+$link-colors: (
+  primary: ('default': var(#{$color-prefix}-primary),
+    hover: var(#{$color-prefix}-secondary),
+    current: var(#{$color-prefix}-secondary),
+  ),
+  secondary: ('default': var(#{$color-prefix}-secondary),
+    hover: var(#{$color-prefix}-primary),
+    current: var(#{$color-prefix}-primary),
+  ),
+  tertiary: ('default': var(#{$color-prefix}-tertiary),
+    hover: var(#{$color-prefix}-secondary),
+    current: var(#{$color-prefix}-secondary),
+  ),
+  contrast: ('default': var(#{$prefix}-font-color),
+    hover: var(#{$color-prefix}-secondary),
+    current: var(#{$color-prefix}-secondary),
+  ),
+);
+
