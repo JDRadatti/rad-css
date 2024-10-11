@@ -51,23 +51,16 @@ details[role="dropdown"] {
   min-height: calc($icon-height + $icon-border-width * 2);
   color: var(#{$color-prefix}-secondary);
 
-  >summary {
-    height: calc($icon-height + $icon-border-width * 2);
-  }
-
-  // Enable touch anywhere to close dropdown
-  &[open]>summary::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    overflow: auto;
-  }
-
   &:focus {
     color: var(#{$color-prefix}-primary);
+  }
+
+  >summary {
+    height: calc($icon-height + $icon-border-width * 2);
+
+    &:after {
+      transform: rotate(90deg);
+    }
   }
 
   &[open] {
@@ -77,10 +70,17 @@ details[role="dropdown"] {
     &>summary:after {
       transform: rotate(270deg);
     }
-  }
 
-  >summary:after {
-    transform: rotate(90deg);
+    // Enable touch anywhere to close dropdown
+    &>summary::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      overflow: auto;
+    }
   }
 
   ol,
