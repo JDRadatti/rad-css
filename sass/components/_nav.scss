@@ -29,10 +29,10 @@ nav {
     align-items: center;
     list-style: none;
     margin-left: 0;
+    gap: var(--md);
 
     >li {
       padding: var(--xxs);
-      padding-right: var(--md);
       border-radius: $global-border-radius;
     }
   }
