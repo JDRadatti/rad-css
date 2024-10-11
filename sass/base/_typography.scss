@@ -100,24 +100,6 @@ strong {
   font-weight: 700;
 }
 
-
-a {
-  color: var(#{$prefix}-highlight);
-  cursor: pointer;
-}
-
-a:hover {
-  text-decoration: underline;
-  text-underline-offset: #{$underlineOffset};
-  color: var(#{$prefix}-highlight-hover);
-}
-
-a:active {
-  text-decoration: underline;
-  text-underline-offset: #{$underlineOffset};
-  color: var(#{$prefix}-highlight-active);
-}
-
 samp {
   color: var(#{$color-prefix}-on-surface-variant)
 }
@@ -190,7 +172,7 @@ hgroup :last-child {
 }
 
 a {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 figcaption {

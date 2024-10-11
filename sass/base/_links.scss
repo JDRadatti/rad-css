@@ -1,0 +1,55 @@
+@use "../abstracts" as *;
+@use "sass:map";
+
+$link-colors: (
+  primary: ('default': var(#{$color-prefix}-primary),
+    hover: var(#{$color-prefix}-secondary),
+    current: var(#{$color-prefix}-secondary),
+  ),
+  secondary: ('default': var(#{$color-prefix}-secondary),
+    hover: var(#{$color-prefix}-primary),
+    current: var(#{$color-prefix}-primary),
+  ),
+  tertiary: ('default': var(#{$color-prefix}-tertiary),
+    hover: var(#{$color-prefix}-secondary),
+    current: var(#{$color-prefix}-secondary),
+  ),
+  contrast: ('default': var(#{$prefix}-font-color),
+    hover: var(#{$color-prefix}-secondary),
+    current: var(#{$color-prefix}-secondary),
+  ),
+);
+
+
+@mixin link($link-type) {
+  $color-map: map.get($link-colors, $link-type);
+  color: map.get($color-map, default);
+
+  &:hover {
+    color: map.get($color-map, hover);
+  }
+
+  &[aria-current] {
+    color: map.get($color-map, current);
+    font-weight: 650;
+  }
+}
+
+@each $link-type, $color-map in $link-colors {
+  .#{$link-type} {
+    @include link($link-type);
+  }
+}
+
+a {
+  cursor: pointer;
+  @include link(primary);
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:active {
+    text-decoration: underline;
+  }
+}
