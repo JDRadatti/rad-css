@@ -39,7 +39,7 @@
     'opsz'$opsz;
   height: $icon-font-size;
   width: $icon-font-size;
-  font-size: inherit;
+  font-size: $icon-font-size;
   font-style: normal;
   display: inline-block;
   line-height: $icon-font-size;
