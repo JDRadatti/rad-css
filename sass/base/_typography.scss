@@ -192,7 +192,7 @@ hr {
 
 :not(aside)>nav>ul>hr {
   width: 1px;
-  height: 100%;
+  height: 50%;
   opacity: 0.5;
   @include border-right;
 }
