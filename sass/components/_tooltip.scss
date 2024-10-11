@@ -1,0 +1,63 @@
+// Issue: cannot use tooltip with [data-icon] as it overrides :before
+// Workaround: Nest a div with class .data-icon and innterHTML of the icon you wish to use.
+@use "../abstracts" as *;
+
+[data-tooltip] {
+
+  position: relative;
+  display: inline-block;
+
+  &:before,
+  &[data-placement="bottom"]::before {
+    content: attr(data-tooltip);
+    white-space: nowrap;
+    background-color: var(#{$color-prefix}-inverse-surface);
+    color: var(#{$color-prefix}-inverse-on-surface);
+    text-align: center;
+    width: fit-content;
+    height: fit-content;
+    padding: var(--xxs) var(--sm);
+    border-radius: $global-border-radius;
+
+    visibility: hidden;
+    transform: scale(0);
+    transition: transform $transition;
+
+    position: absolute;
+    z-index: 101;
+    top: 115%;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+
+  }
+
+  &[data-placement="right"]::before {
+    bottom: 0;
+    top: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    right: auto;
+    left: 115%;
+  }
+
+  &[data-placement="left"]::before {
+    bottom: 0;
+    top: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    left: auto;
+    right: 115%;
+  }
+
+  &[data-placement="top"]::before {
+    top: auto;
+    bottom: 115%;
+  }
+
+  &:hover::before {
+    visibility: visible;
+    transform: scale(1);
+  }
+
+}
