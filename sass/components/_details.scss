@@ -14,20 +14,20 @@ details {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    white-space: nowrap
-  }
+    white-space: nowrap;
 
-  >summary:after {
-    @include icon-inline('keyboard_arrow_right');
-    transition: transform $transition;
+    &:after {
+      @include icon-inline('keyboard_arrow_right');
+      transition: transform $transition;
+    }
+
+    &:focus {
+      color: var(#{$color-prefix}-primary);
+    }
   }
 
   &[open]>summary:after {
     transform: rotate(90deg);
-  }
-
-  >summary:focus {
-    color: var(#{$color-prefix}-primary);
   }
 
   >p {
@@ -53,6 +53,17 @@ details[role="dropdown"] {
 
   >summary {
     height: calc($icon-height + $icon-border-width * 2);
+  }
+
+  // Enable touch anywhere to close dropdown
+  &[open]>summary::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
   }
 
   &:focus {
@@ -99,7 +110,6 @@ details[role="dropdown"] {
       white-space: nowrap;
     }
   }
-
 
   // Utilities
   &.text {
