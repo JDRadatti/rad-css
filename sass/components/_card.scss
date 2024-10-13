@@ -34,13 +34,13 @@ article {
   position: relative;
 
   header {
-    @include card-header(heading);
+    @include card-header(body);
     @include border-bottom;
     margin-bottom: $body-spacing;
   }
 
   footer {
-    @include card-footer(heading);
+    @include card-footer(body);
     @include border-top;
     margin-top: $body-spacing;
   }
