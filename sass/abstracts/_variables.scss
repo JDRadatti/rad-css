@@ -270,6 +270,7 @@ $fontFamilyMonospace: ui-monospace,
 $fontFamilyHeading: #{$fontFamilySans};
 $fontFamilyMain: #{$fontFamilySans};
 $underlineOffset: 0.2em;
+$subtext-opacity: 0.8;
 
 // Colors
 $highlight: var(#{$color-prefix}-primary);

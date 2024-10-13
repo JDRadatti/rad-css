@@ -167,8 +167,8 @@ blockquote {
 }
 
 blockquote footer,
-hgroup :last-child {
-  opacity: var(#{$prefix}-subtext-opacity);
+hgroup>:last-child {
+  opacity: $subtext-opacity;
 }
 
 a {
