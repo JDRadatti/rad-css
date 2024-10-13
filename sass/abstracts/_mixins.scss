@@ -89,7 +89,7 @@
 
 // Border Radius
 @mixin border-radius {
-  border-radius: #{$borderRadius};
+  border-radius: $border-radius;
 }
 
 // State Layers

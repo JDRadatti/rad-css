@@ -22,16 +22,16 @@ input {
   height: 1.25em;
   margin-top: -.125em;
   margin-inline-end: var(--xs);
-  border-radius: $input-border-radius;
   vertical-align: middle;
   cursor: pointer;
   transition: background-color $transition;
 
+  @include border-radius;
   @include border;
 }
 
 [type="radio"] {
-  border-radius: $border-radius-circle;
+  border-radius: $global-border-radius;
   position: relative;
 }
 
@@ -43,7 +43,7 @@ input {
   background-color: $input-color-onsurface;
   height: 50%;
   width: 50%;
-  border-radius: $border-radius-circle;
+  border-radius: $global-border-radius;
   z-index: 2;
 }
 
@@ -71,7 +71,7 @@ textarea:disabled,
 [type="radio"]:checked:focus,
 [type="radio"]:checked:active {
   background-size: 0.5em;
-  border-radius: $border-radius-circle;
+  border-radius: $global-border-radius;
 }
 
 [type="radio"]:focus,
@@ -130,7 +130,7 @@ fieldset:has(label [type="checkbox"]) {
   content: " ";
   position: absolute;
   background-color: $input-color-onsurface;
-  border-radius: $border-radius-circle;
+  border-radius: $global-border-radius;
   z-index: 2;
 
   height: 1em;
@@ -152,7 +152,7 @@ fieldset:has(label [type="checkbox"]) {
   background-position: 90% 50%;
   background-repeat: no-repeat;
   background-size: 1em;
-  border-radius: $border-radius-circle;
+  border-radius: $global-border-radius;
 }
 
 [role="switch"]:active,
@@ -168,7 +168,7 @@ fieldset:has(label [type="checkbox"]) {
   width: 100%;
   height: 7px;
   background-color: $input-color-surface;
-  border-radius: $border-radius-circle;
+  border-radius: $global-border-radius;
   border: none;
   box-shadow: none;
   display: flex;
@@ -181,7 +181,7 @@ fieldset:has(label [type="checkbox"]) {
   appearance: none;
   height: 25px;
   width: 25px;
-  border-radius: $border-radius-circle;
+  border-radius: $global-border-radius;
   background-color: $input-color-surface;
   cursor: pointer;
   border: $input-border-hidden;
@@ -192,7 +192,7 @@ fieldset:has(label [type="checkbox"]) {
 [type="range"]::-moz-range-thumb {
   height: 25px;
   width: 25px;
-  border-radius: $border-radius-circle;
+  border-radius: $global-border-radius;
   background-color: $input-color-surface;
   cursor: pointer;
   border: $input-border-hidden;
@@ -227,14 +227,14 @@ input[type="text"] {
   margin-top: var(--md);
   padding: var(--sm);
   @include border;
-  border-radius: $input-border-radius;
+  @include border-radius;
 }
 
 textarea {
   -webkit-appearance: none;
   appearance: none;
   resize: vertical;
-  border-radius: $input-border-radius;
+  @include border-radius;
   border: $input-border;
   padding: var(--sm);
   width: 100%;

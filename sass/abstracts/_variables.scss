@@ -212,7 +212,9 @@ $typo-default-elements: (
 
 
 // Style Variables
-$global-border-radius: 10em; // IMP: ADJUST FOR DIFF STYLES
+$global-border-radius: 0em; // IMP: ADJUST FOR DIFF STYLES (buttons, card, radio, switch, range)
+$border-radius: var(--xxs, 0.2em); // IMP: ADJUST FOR DIFF STYLES (form elements, dropdown, checkmarks)
+// TODO: update card border radius when dynamic = false
 
 // Button Variables
 $button-font-label: label;
@@ -226,7 +228,7 @@ $button-font-size: calc(typography($button-font-label, font-size) * $quarterstep
 $icon-font-style: Rounded; // Outlined, Rounded, or Sharp.
 $icon-font-family: Material Symbols $icon-font-style;
 $icon-font-size: 1.272em;
-$icon-padding: var(--sm); // IMP: ADJUST FOR DIFF STYLES
+$icon-padding: var(--xs); // IMP: ADJUST FOR DIFF STYLES
 $icon-inline-padding: var(--sm); // IMP: ADJUST FOR DIFF STYLES
 $icon-border-width: var(--xxs); // IMP: ADJUST FOR DIFF STYLES
 $icon-fill: 1; // 1 for filled, 0 for outlined
@@ -279,7 +281,6 @@ $borderColor: var(#{$color-prefix}-outline-variant);
 $borderWidth: 1px;
 $borderWidthThick: 4px;
 $borderStyle: solid;
-$borderRadius: var(--xs, 0.2em);
 $border: $borderWidth $borderStyle $borderColor;
 $borderTransparent: $borderWidth $borderStyle transparent;
 $borderHighlight: $borderWidthThick $borderStyle $highlight;
@@ -300,9 +301,7 @@ $section-flow: var(--lg);
 // Input + Forms
 $icon-checkbox: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(255, 255, 255)' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
 $icon-chevron-down: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="%23B7B7B7"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>');
-$border-radius-circle: 50em;
 
-$input-border-radius: 0.2em;
 $input-border-width: 1px;
 $input-color-surface: $borderColor;
 $input-color-onsurface: white;
@@ -347,4 +346,3 @@ $link-colors: (
     current: var(#{$color-prefix}-secondary),
   ),
 );
-
