@@ -24,6 +24,7 @@
 a {
   cursor: pointer;
   @include link($default-link-type);
+  text-decoration: none;
 
   &:hover {
     text-decoration: underline;
