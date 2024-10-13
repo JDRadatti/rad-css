@@ -29,7 +29,9 @@ body>main>[role="document"] {
 }
 
 section {
-  padding-bottom: $section-flow;
+  padding: $section-flow;
+  margin-left: calc(-1 * $container-padding-horizontal);
+  margin-right: calc(-1 * $container-padding-horizontal);
 }
 
 .container-fluid {
