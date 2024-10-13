@@ -133,3 +133,32 @@ select {
     outline: $input-outline;
   }
 }
+
+nav details {
+  margin-left: var(--sm);
+  background-color: var(--bg-color);
+
+  &>summary {
+    font-weight: 700;
+
+    &:after {
+      content: '';
+    }
+  }
+
+  ol,
+  ul {
+    margin-top: 0;
+    margin-left: var(--sm);
+    list-style: none;
+    @include border-left;
+  
+    li {
+      padding: var(--xs) var(--sm);
+
+      a {
+        @include link(secondary);
+      }
+    }
+  }
+}
