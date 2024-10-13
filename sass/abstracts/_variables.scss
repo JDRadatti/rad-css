@@ -329,6 +329,7 @@ $shadow-5: 0px 8px 10px -6px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0,
 
 // Links
 $default-link-type: primary;
+$default-link-text-decoration: none;
 $link-colors: (
   primary: ('default': var(#{$color-prefix}-primary),
     hover: var(#{$color-prefix}-secondary),
