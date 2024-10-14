@@ -36,8 +36,8 @@ body>main>[role="document"] {
     &>section {
       margin-left: calc(-1 * $container-padding-horizontal * $halfstep-dec);
       margin-right: calc(-1 * $container-padding-horizontal * $halfstep-dec);
-      padding-left: calc($container-padding-horizontal * $wholestep-dec);
-      padding-right: calc($container-padding-horizontal * $wholestep-dec);
+      padding-left: calc($container-padding-horizontal * $halfstep-dec);
+      padding-right: calc($container-padding-horizontal * $halfstep-dec);
     }
   }
 }
