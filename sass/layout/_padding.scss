@@ -8,9 +8,23 @@ body>main>hgroup,
 body>main>[role="document"] {
   padding: 0 $container-padding-horizontal;
 
+  &>section {
+    margin-left: calc(-1 * $container-padding-horizontal);
+    margin-right: calc(-1 * $container-padding-horizontal);
+    padding-right: $container-padding-horizontal;
+    padding-left: $container-padding-horizontal;
+  }
+
   @media screen and (max-width: breakpoint(md)) {
     & {
       padding: 0 calc($container-padding-horizontal * $wholestep-dec);
+    }
+
+    &>section {
+      margin-left: calc(-1 * $container-padding-horizontal * $wholestep-dec);
+      margin-right: calc(-1 * $container-padding-horizontal * $wholestep-dec);
+      padding-left: calc($container-padding-horizontal * $wholestep-dec);
+      padding-right: calc($container-padding-horizontal * $wholestep-dec);
     }
   }
 
@@ -18,23 +32,25 @@ body>main>[role="document"] {
     & {
       padding: 0 calc($container-padding-horizontal * $halfstep-dec);
     }
+
+    &>section {
+      margin-left: calc(-1 * $container-padding-horizontal * $halfstep-dec);
+      margin-right: calc(-1 * $container-padding-horizontal * $halfstep-dec);
+      padding-left: calc($container-padding-horizontal * $wholestep-dec);
+      padding-right: calc($container-padding-horizontal * $wholestep-dec);
+    }
   }
 }
 
 // Vertical Padding
+section,
 body>main>hgroup,
 body>main>[role="document"] {
   padding-top: $container-padding-vertical;
   padding-bottom: $container-padding-vertical;
 }
 
-section {
-  padding: $section-flow;
-  margin-left: calc(-1 * $container-padding-horizontal);
-  margin-right: calc(-1 * $container-padding-horizontal);
-}
-
 .container-fluid {
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
