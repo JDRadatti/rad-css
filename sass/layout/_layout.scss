@@ -9,6 +9,7 @@ body {
     "main" 
     "footer";
   align-items: start;
+  min-height: 100vh;
 
   >header {
     grid-area: header;
@@ -26,7 +27,7 @@ body {
 
 
 @if $sticky-header ==true {
-  body > header {
+  body>header {
     position: sticky;
     top: 0;
   }
