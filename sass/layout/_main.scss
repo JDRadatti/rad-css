@@ -17,7 +17,7 @@ body main {
   grid-template-areas:
     "menu header sidebar"
     "menu main sidebar";
-  overflow: auto;
+  overflow-y: visible;
 
   // one asside
   &:has(aside) {
