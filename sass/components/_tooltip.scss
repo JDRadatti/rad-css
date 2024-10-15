@@ -1,6 +1,7 @@
 // Issue: cannot use tooltip with [data-icon] as it overrides :before
 // Workaround: Nest a div with class .data-icon and innterHTML of the icon you wish to use.
 @use "../abstracts" as *;
+@use "../base" as *;
 
 [data-tooltip] {
 
@@ -9,6 +10,8 @@
 
   &:before,
   &[data-placement="bottom"]::before {
+    @include font-bold(body);
+    font-size: 1rem;
     content: attr(data-tooltip);
     white-space: nowrap;
     background-color: var(#{$color-prefix}-inverse-surface);
