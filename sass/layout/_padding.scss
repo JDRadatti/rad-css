@@ -50,6 +50,10 @@ body>main>[role="document"] {
   padding-bottom: $container-padding-vertical;
 }
 
+section>*:not(:last-child) {
+  margin-bottom: var(--sm);
+}
+
 .container-fluid {
   padding-left: 0 !important;
   padding-right: 0 !important;
