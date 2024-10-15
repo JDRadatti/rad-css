@@ -31,18 +31,22 @@ $body-spacing: var(--sm);
 article {
   @include bg-surfacecontainer;
   @include card-padding(body);
+  border-radius: $card-border-radius;
   position: relative;
 
   header {
     @include card-header(body);
     @include border-bottom;
     margin-bottom: $body-spacing;
+    border-radius: $card-border-radius;
+    border-radius: $card-border-radius $card-border-radius 0 0;
   }
 
   footer {
     @include card-footer(body);
     @include border-top;
     margin-top: $body-spacing;
+    border-radius: 0 0 $card-border-radius $card-border-radius;
   }
 }
 

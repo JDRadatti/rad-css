@@ -212,7 +212,8 @@ $typo-default-elements: (
 
 
 // Style Variables
-$global-border-radius: 0em; // IMP: ADJUST FOR DIFF STYLES (buttons, card, radio, switch, range)
+$global-border-radius: 10em; // IMP: ADJUST FOR DIFF STYLES (buttons, card, radio, switch, range)
+$card-border-radius: typography(body, padding); // IMP: ADJUST FOR DIFF STYLES (card)
 $border-radius: var(--xxs, 0.2em); // IMP: ADJUST FOR DIFF STYLES (form elements, dropdown, checkmarks)
 // TODO: update card border radius when dynamic = false
 
