@@ -227,16 +227,22 @@ $button-font-size: calc(typography($button-font-label, font-size) * $quarterstep
 // <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 $icon-font-style: Rounded; // Outlined, Rounded, or Sharp.
 $icon-font-family: Material Symbols $icon-font-style;
-$icon-font-size: 1.272em;
-$icon-padding: var(--xs); // IMP: ADJUST FOR DIFF STYLES
-$icon-inline-padding: var(--sm); // IMP: ADJUST FOR DIFF STYLES
-$icon-border-width: var(--xxs); // IMP: ADJUST FOR DIFF STYLES
+$icon-font-size: 1.272;
+$icon-font-size-em: $icon-font-size + em;
+
+$icon-padding: $halfstep-dec; // IMP: ADJUST FOR DIFF STYLES : Integer
+$icon-padding-em: calc(1em * $icon-padding);
+$icon-inline-padding: 0.1; // IMP: ADJUST FOR DIFF STYLES : Integer
+$icon-inline-padding-em: calc(1.127em * $icon-inline-padding);
+$icon-border-width: 0.3; // IMP: ADJUST FOR DIFF STYLES : Integer
+$icon-border-width-em: calc(1.127em * $icon-border-width);
 $icon-fill: 1; // 1 for filled, 0 for outlined
 $icon-wght: 400;
 $icon-grad: 0;
 $icon-opsz: 24;
-$icon-height: calc($icon-font-size + calc($icon-padding * 2));
-$icon-border: $icon-border-width solid transparent;
+$icon-height-em: calc(calc($icon-font-size-em * $icon-font-size * $icon-font-size) + calc($icon-border-width-em * 2) + calc($icon-padding-em * 2));
+$icon-halfheight-em: calc($icon-height-em/2);
+$icon-border: $icon-border-width-em solid transparent;
 $icon-background: inherit;
 $icon-color: inherit;
 

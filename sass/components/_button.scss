@@ -2,7 +2,15 @@
 @use "../base" as *;
 @use "../utilities" as *;
 
-$button-p: calc($icon-padding * 2 + $icon-border-width);
+
+.test-button {
+  padding: $icon-border-width-em;
+  border: $icon-border-width-em solid pink;
+  outline: $icon-padding-em solid purple;
+  height: calc(1.618em + calc($icon-border-width-em * 2) + calc($icon-padding-em * 2));
+  background-color: gray;
+}
+
 
 button {
 
@@ -14,10 +22,10 @@ button {
     font-weight: $button-font-weight;
     font-size: $button-font-size;
     border-radius: $global-border-radius;
-    padding: 0 $button-p;
-    min-height: calc($icon-height + $icon-border-width * 2);
-    min-width: calc($icon-height + $icon-border-width * 2);
+    padding: 0 $icon-halfheight-em;
     align-self: center; // prevent streching when inside a div
+    min-height: $icon-height-em;
+    min-width: $icon-height-em;
   }
 
   // Utilities
@@ -43,12 +51,12 @@ button {
 button[data-icon] {
 
   &::before {
-    padding: $icon-padding;
+    padding: $icon-padding-em;
   }
 
   &[data-placement="top"],
   &[data-placement="bottom"] {
-    padding: $button-p calc(2 * $button-p);
+    padding: $icon-halfheight-em calc(2 * $icon-halfheight-em);
   }
 
   &[data-placement="bottom"] {

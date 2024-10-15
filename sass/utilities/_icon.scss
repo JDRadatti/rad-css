@@ -37,12 +37,12 @@
     'wght'$wght,
     'GRAD'$grad,
     'opsz'$opsz;
-  height: $icon-font-size;
-  width: $icon-font-size;
-  font-size: $icon-font-size;
+  height: $icon-font-size-em;
+  width: $icon-font-size-em;
+  line-height: $icon-font-size;
+  font-size: $icon-font-size-em;
   font-style: normal;
   display: inline-block;
-  line-height: $icon-font-size;
   text-transform: none;
   letter-spacing: normal;
   word-wrap: normal;
@@ -119,11 +119,11 @@
 
   &:not([data-placement="right"])::before,
   &[data-placement="left"]::before {
-    padding-right: $icon-inline-padding;
+    padding-right: $icon-inline-padding-em;
   }
 
   &[data-placement="right"]::before {
-    padding-left: $icon-inline-padding;
+    padding-left: $icon-inline-padding-em;
   }
 
   &[data-placement="top"]::before,
