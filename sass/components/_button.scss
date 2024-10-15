@@ -3,15 +3,6 @@
 @use "../utilities" as *;
 
 
-.test-button {
-  padding: $icon-border-width-em;
-  border: $icon-border-width-em solid pink;
-  outline: $icon-padding-em solid purple;
-  height: calc(1.618em + calc($icon-border-width-em * 2) + calc($icon-padding-em * 2));
-  background-color: gray;
-}
-
-
 button {
 
   & {
