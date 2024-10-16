@@ -190,6 +190,12 @@ hr {
   @include border-bottom;
 }
 
+small,
+caption {
+  font-size: 80%;
+  @include font(label);
+}
+
 :not(aside)>nav>ul>hr {
   width: 1px;
   height: 50%;
