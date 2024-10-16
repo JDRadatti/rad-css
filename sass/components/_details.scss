@@ -138,14 +138,6 @@ nav details {
   margin-left: var(--sm);
   background-color: var(--bg-color);
 
-  &>summary {
-    font-weight: 700;
-
-    &:after {
-      content: '';
-    }
-  }
-
   ol,
   ul {
     margin-top: 0;
@@ -160,5 +152,13 @@ nav details {
         @include link(secondary);
       }
     }
+  }
+}
+
+aside>nav>details>summary {
+  font-weight: 700;
+
+  &:after {
+    content: '';
   }
 }
