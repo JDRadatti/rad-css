@@ -1,0 +1,30 @@
+@use "../base" as *;
+@use "../abstracts" as *;
+
+table {
+
+  tr {
+    th {
+      @include font-bold(label);
+      @include border-bottom;
+    }
+
+    td {
+      padding: var(--xs);
+    }
+
+    &:nth-child(odd) {
+      background-color: var(#{$color-prefix}-surface);
+    }
+
+    &:nth-child(even) {
+      background-color: var(#{$color-prefix}-surface-lowest);
+    }
+  }
+}
+
+caption {
+  caption-side: bottom;
+  padding: var(--xs);
+  @include font-bold(label);
+}
