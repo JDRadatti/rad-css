@@ -2,29 +2,40 @@
 @use "../abstracts" as *;
 
 table {
+  margin: var(--md);
+  text-align: left;
+  @include font(body);
+
+  >thead {
+    @include border-bottom;
+  }
+
+  >tfoot {
+    @include border-top;
+  }
 
   tr {
     th {
       @include font-bold(label);
-      @include border-bottom;
+    }
+
+    th[scope="col"] {
+      padding-bottom: var(--sm);
+    }
+
+    th[scope="row"] {
+      padding-right: var(--sm);
     }
 
     td {
-      padding: var(--xs);
-    }
-
-    &:nth-child(odd) {
-      background-color: var(#{$color-prefix}-surface);
-    }
-
-    &:nth-child(even) {
-      background-color: var(#{$color-prefix}-surface-lowest);
+      @include border-bottom;
+      padding: var(--sm);
+      padding-left: 0;
     }
   }
 }
 
 caption {
   caption-side: bottom;
-  padding: var(--xs);
-  @include font-bold(label);
+  padding: var(--sm);
 }
