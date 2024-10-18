@@ -40,30 +40,28 @@ button {
 
 // Button Icon Padding
 button[data-icon] {
+  padding: 0;
 
   &::before {
     padding: $icon-padding-em;
   }
 
-  &[data-placement="top"],
-  &[data-placement="bottom"] {
-    padding: $icon-halfheight-em calc(2 * $icon-halfheight-em);
-  }
-
-  &[data-placement="bottom"] {
-    padding-bottom: 0;
-  }
-
   &[data-placement="top"] {
+    padding: $icon-quarterheight-em $icon-height-em;
     padding-top: 0;
+  }
+
+  &[data-placement="bottom"] {
+    padding: $icon-quarterheight-em $icon-height-em;
+    padding-bottom: 0;
   }
 
   &:not([data-placement="right"], [data-placement="top"], [data-placement="bottom"]),
   &[data-placement="left"] {
-    padding-left: 0;
+    padding: 0 $icon-halfheight-em 0 0;
   }
 
   &[data-placement="right"] {
-    padding-right: 0;
+    padding: 0 0 0 $icon-halfheight-em;
   }
 }
