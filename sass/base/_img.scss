@@ -1,0 +1,16 @@
+@use "../abstracts" as *;
+
+img {
+  border-radius: $img-border-radius;
+  margin-bottom: var(--lg);
+}
+
+figure {
+
+  margin-bottom: var(--lg);
+
+  >img {
+    margin-bottom: 0;
+  }
+
+}
