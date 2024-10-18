@@ -25,6 +25,7 @@ a {
   cursor: pointer;
   @include link($default-link-type);
   text-decoration: $default-link-text-decoration;
+  font-weight: 500;
 
   &:hover {
     text-decoration: underline;
