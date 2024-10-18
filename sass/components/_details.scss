@@ -83,8 +83,17 @@ details[role="dropdown"] {
     }
   }
 
-  ol,
-  ul {
+  >article {
+    position: absolute;
+    left: 0;
+    z-index: 10;
+    min-width: 100%;
+    margin-top: 0.5rem;
+    box-shadow: $shadow-1;
+  }
+
+  >ol,
+  >ul {
     @include border-radius;
     position: absolute;
     left: 0;
