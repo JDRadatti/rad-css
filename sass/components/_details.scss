@@ -110,7 +110,7 @@ details[role="dropdown"] {
     background-color: $input-color-element-bg-focus;
     box-shadow: $shadow-1;
 
-    li {
+    >li {
       @include border-radius;
       @include state-layer;
       padding: var(--xs) var(--sm);
@@ -154,7 +154,7 @@ nav details {
     list-style: none;
     @include border-left;
 
-    li {
+    li:not(:has(>details)) {
       padding: var(--xs) var(--sm);
 
       a {
