@@ -76,6 +76,10 @@
   @include icon-inline(attr(data-icon));
 }
 
+a[data-icon]:hover {
+  text-decoration: none;
+}
+
 
 [data-icon] {
   display: flex;
