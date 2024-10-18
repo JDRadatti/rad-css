@@ -60,8 +60,9 @@ body {
   body>aside nav {
     position: sticky;
     top: $sidebar-y-offset;
-    overflow: scroll;
-    height: 85vh;
+    overflow: auto;
+    overflow-x: hidden;
+    height: $sidebar-height;
   }
 }
 
