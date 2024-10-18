@@ -48,3 +48,7 @@ aside nav {
     gap: var(--xs);
   }
 }
+
+aside nav {
+  justify-content: flex-start;
+}
