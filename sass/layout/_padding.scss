@@ -3,7 +3,7 @@
 
 // Horizontal Padding
 body>footer,
-body>header,
+body>header:not(.wide),
 body>main>hgroup,
 body>main>[role="document"] {
   padding: 0 $container-padding-horizontal;
@@ -44,17 +44,26 @@ body>main>[role="document"] {
 
 // Vertical Padding
 section,
-body>main>hgroup,
 body>main>[role="document"] {
   padding-top: $container-padding-vertical;
   padding-bottom: $container-padding-vertical;
+  overflow: hidden;
 }
 
-section>*:not(:last-child) {
-  margin-bottom: var(--sm);
+body>main>hgroup {
+  padding-top: $container-padding-vertical;
+}
+
+article>*:not(:last-child, +footer, header, footer, h1, h2, h3, h4, h5, h6),
+section>*:not(:last-child, h1, h2, h3, h4, h5, h6) {
+  margin-bottom: var(--md);
 }
 
 .container-fluid {
   padding-left: 0 !important;
   padding-right: 0 !important;
+}
+
+body>header.wide {
+  padding: 0 var(--sm);
 }
