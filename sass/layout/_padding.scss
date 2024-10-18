@@ -4,8 +4,7 @@
 // Horizontal Padding
 body>footer,
 body>header:not(.wide),
-body>main>hgroup,
-body>main>[role="document"] {
+body>main {
   padding: 0 $container-padding-horizontal;
 
   &>section {
@@ -44,7 +43,7 @@ body>main>[role="document"] {
 
 // Vertical Padding
 section,
-body>main>[role="document"] {
+body>main {
   padding-top: $container-padding-vertical;
   padding-bottom: $container-padding-vertical;
   overflow: hidden;

@@ -4,12 +4,32 @@
 body {
   display: grid;
   grid-template-rows: auto 1fr auto;
-  grid-template-areas:
-    "header"
-    "main" 
-    "footer";
-  align-items: start;
+  grid-template-columns: $menu-width 1fr $sidebar-width;
   min-height: 100vh;
+
+  // one asside
+  &:has(aside) {
+    grid-template-areas:
+      "header header header"
+      "menu main main"
+      "footer footer footer";
+  }
+
+  // two asside
+  &:has(aside + aside) {
+    grid-template-areas:
+      "header header header"
+      "menu main sidebar"
+      "footer footer footer";
+  }
+
+  // no asside
+  &:not(:has(aside)) {
+    grid-template-areas:
+      "header header header"
+      "main main main"
+      "footer footer footer";
+  }
 
   >header {
     grid-area: header;
@@ -23,8 +43,27 @@ body {
   >footer {
     grid-area: footer;
   }
+
+
+  >aside {
+    grid-area: menu;
+    width: $menu-width;
+    padding-top: var(--sm);
+
+    +aside {
+      grid-area: sidebar;
+    }
+  }
 }
 
+@if $sticky-sidebar==true {
+  body>aside nav {
+    position: sticky;
+    top: $sidebar-y-offset;
+    overflow: scroll;
+    height: 85vh;
+  }
+}
 
 @if $sticky-header ==true {
   body>header {
