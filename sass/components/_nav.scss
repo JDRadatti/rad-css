@@ -38,11 +38,13 @@ nav {
   }
 }
 
+nav[role="menu"],
 aside nav {
   flex-direction: column;
 
   ul {
     align-items: flex-start;
     flex-direction: column;
+    gap: var(--xs);
   }
 }
