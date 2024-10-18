@@ -59,7 +59,7 @@ input {
   @include icon-bg-center($icon-checkbox);
 }
 
-label[aria-disabled="true"],
+[aria-disabled="true"],
 [type="checkbox"]:disabled,
 textarea:disabled,
 [type="radio"]:disabled {
@@ -221,7 +221,11 @@ input :not([type="checkbox"]) {
   margin-bottom: var(--sm);
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+input[type="url"] {
   width: 100%;
   margin-bottom: var(--xs);
   margin-top: var(--md);
