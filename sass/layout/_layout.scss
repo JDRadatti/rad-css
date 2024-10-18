@@ -72,3 +72,42 @@ body {
     top: 0;
   }
 }
+
+// Media Queries 
+@media screen and (max-width: breakpoint(lg)) {
+
+  body {
+
+    // two asside
+    &:has(aside + aside) {
+      grid-template-areas:
+        "header header header"
+        "menu main main"
+        "footer footer footer";
+
+      >aside+aside {
+        display: none;
+      }
+    }
+
+  }
+}
+
+@media screen and (max-width: breakpoint(md)) {
+  body {
+
+    // at least one asside
+    &:has(aside + aside),
+    &:has(aside) {
+      grid-template-areas:
+        "header header header"
+        "main main main"
+        "footer footer footer";
+
+      >aside {
+        display: none;
+      }
+    }
+  }
+
+}
