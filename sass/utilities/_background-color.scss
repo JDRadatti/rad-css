@@ -2,9 +2,6 @@
 
 @mixin bg-transparent {
   background-color: transparent;
-  color: inherit;
-  --state-color: inherit;
-  --bg-color: inherit;
 }
 
 @mixin bg-primary {
