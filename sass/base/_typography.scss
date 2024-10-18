@@ -150,8 +150,7 @@ ul {
   margin-bottom: var(--sm);
   margin-left: 2rem;
 
-  li a {
-    display: inline-block;
+  li a  {
     width: 100%;
   }
 }
@@ -176,9 +175,8 @@ figcaption {
   margin-bottom: 1em;
 }
 
-img {
-  margin-top: 1em;
-  margin-bottom: 11em;
+legend {
+  @include font-bold(heading);
 }
 
 hr {
