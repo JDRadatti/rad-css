@@ -34,7 +34,7 @@ article {
   border-radius: $card-border-radius;
   position: relative;
 
-  header {
+  >header {
     @include card-header(body);
     @include border-bottom;
     margin-bottom: $body-spacing;
@@ -42,7 +42,7 @@ article {
     border-radius: $card-border-radius $card-border-radius 0 0;
   }
 
-  footer {
+  >footer {
     @include card-footer(body);
     @include border-top;
     margin-top: $body-spacing;
@@ -143,7 +143,7 @@ article {
 
 // Card utilities
 
-article.outline {
+article.border {
   @include bg-transparent;
   @include border;
 }
