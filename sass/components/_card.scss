@@ -151,3 +151,7 @@ article.border {
 article.text {
   @include bg-transparent;
 }
+
+article.fit {
+  width: fit-content;
+}
