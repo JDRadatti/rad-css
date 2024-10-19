@@ -21,11 +21,11 @@ $breakpoints: (
 // will increase the spacing and visa versa.
 $scaleFactor: 1; // IMP: ADJUST FOR DIFF STYLES
 
-$goldenRatio: 1.618;
-$lineHeightIns: 1em * $goldenRatio;
+$scaleRatio: 1.618;
+$lineheightins: 1em * $scaleRatio;
 
-//Incrents
-$wholestep: $goldenRatio;
+// Incrents
+$wholestep: $scaleRatio;
 $halfstep: math.sqrt($wholestep);
 $quarterstep: math.sqrt($halfstep);
 $eighthstep: math.sqrt($quarterstep);
@@ -214,6 +214,7 @@ $typo-default-elements: (
 // Style Variables
 $global-border-radius: 10em; // IMP: ADJUST FOR DIFF STYLES (buttons, card, radio, switch, range)
 $card-border-radius: typography(body, padding); // IMP: ADJUST FOR DIFF STYLES (card)
+$img-border-radius: typography(body, padding); // IMP: ADJUST FOR DIFF STYLES (img)
 $border-radius: var(--xxs, 0.2em); // IMP: ADJUST FOR DIFF STYLES (form elements, dropdown, checkmarks)
 // TODO: update card border radius when dynamic = false
 
@@ -233,16 +234,16 @@ $icon-font-size-em: $icon-font-size + em;
 
 $icon-padding: $halfstep-dec; // IMP: ADJUST FOR DIFF STYLES : Integer
 $icon-padding-em: calc(1em * $icon-padding);
-$icon-inline-padding: 0.1; // IMP: ADJUST FOR DIFF STYLES : Integer
-$icon-inline-padding-em: calc(1.127em * $icon-inline-padding);
-$icon-border-width: 0.3; // IMP: ADJUST FOR DIFF STYLES : Integer
-$icon-border-width-em: calc(1.127em * $icon-border-width);
+$icon-inline-padding: var(--xs); // IMP: ADJUST FOR DIFF STYLES : Integer
+$icon-border-width: 0; // IMP: ADJUST FOR DIFF STYLES : Integer
+$icon-border-width-em: calc($icon-font-size-em * $icon-border-width);
 $icon-fill: 1; // 1 for filled, 0 for outlined
 $icon-wght: 400;
 $icon-grad: 0;
 $icon-opsz: 24;
 $icon-height-em: calc(calc($icon-font-size-em * $icon-font-size * $icon-font-size) + calc($icon-border-width-em * 2) + calc($icon-padding-em * 2));
 $icon-halfheight-em: calc($icon-height-em/2);
+$icon-quarterheight-em: calc($icon-height-em/4);
 $icon-border: $icon-border-width-em solid transparent;
 $icon-background: inherit;
 $icon-color: inherit;
@@ -251,7 +252,7 @@ $icon-color: inherit;
 $transition: 0.2s ease-in-out;
 
 // Font
-$fontSize: 1rem;
+$fontSize: 1.2rem;
 
 $fontFamilyEmoji: "Apple Color Emoji",
   "Segoe UI Emoji",
@@ -298,12 +299,17 @@ $menu-width: 210px;
 $sidebar-width: 210px;
 
 // Navbar
-$navbar-height: 100px;
-$sticky-header: true;
+$sticky-sidebar: true;
+$sticky-header: false;
+$sidebar-y-offset: 100px;
+$sidebar-height: calc(100vh - $sidebar-y-offset);
+@if $sticky-header==false {
+  $sidebar-y-offset: 25px;
+}
 
 // Layout Padding
 $container-padding-horizontal: var(--xl);
-$container-padding-vertical: var(--md);
+$container-padding-vertical: var(--lg);
 $section-flow: var(--lg);
 
 // Input + Forms
