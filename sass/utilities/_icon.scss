@@ -123,11 +123,11 @@ a[data-icon]:hover {
 
   &:not([data-placement="right"])::before,
   &[data-placement="left"]::before {
-    padding-right: $icon-inline-padding-em;
+    padding-right: $icon-inline-padding;
   }
 
   &[data-placement="right"]::before {
-    padding-left: $icon-inline-padding-em;
+    padding-left: $icon-inline-padding;
   }
 
   &[data-placement="top"]::before,
