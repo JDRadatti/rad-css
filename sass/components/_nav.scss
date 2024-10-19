@@ -41,14 +41,34 @@ nav {
 nav[role="menu"],
 aside nav {
   flex-direction: column;
+  justify-content: flex-start;
 
   ul {
     align-items: flex-start;
     flex-direction: column;
     gap: var(--xs);
   }
-}
 
-aside nav {
-  justify-content: flex-start;
+  &>details:last-child {
+    padding-bottom: var(--xxl); // To see the last details on overflow
+  }
+
+  details>summary {
+    font-weight: 700;
+
+    &.hide-arrows:after {
+      content: '';
+    }
+
+    &[disabled] {
+
+      &:after {
+        content: '';
+      }
+
+      pointer-events: none;
+
+    }
+
+  }
 }
