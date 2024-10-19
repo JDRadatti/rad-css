@@ -143,9 +143,10 @@ select {
   }
 }
 
-nav details {
+nav details:not([role="dropdown"]){
+  margin-top: var(--sm);
   margin-left: var(--sm);
-  background-color: var(--bg-color);
+  background-color: transparent;
 
   ol,
   ul {
