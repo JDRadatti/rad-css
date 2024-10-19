@@ -165,6 +165,10 @@ nav details:not([role="dropdown"]){
   }
 }
 
+aside nav>details:last-child {
+  padding-bottom: var(--xxl); // To see the last details on overflow
+}
+
 aside nav details>summary {
   font-weight: 700;
 
