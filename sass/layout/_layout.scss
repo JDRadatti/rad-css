@@ -74,6 +74,13 @@ body {
     position: sticky;
     top: 0;
   }
+
+  @if $sticky-sidebar==true {
+    body>aside nav {
+      top: $sidebar-y-offset;
+    }
+  }
+
 }
 
 // Media Queries 
