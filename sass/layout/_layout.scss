@@ -12,7 +12,7 @@ body {
     grid-template-areas:
       "header header header"
       "menu main main"
-      "footer footer footer";
+      "menu footer footer";
   }
 
   // two asside
@@ -20,7 +20,7 @@ body {
     grid-template-areas:
       "header header header"
       "menu main sidebar"
-      "footer footer footer";
+      "menu footer footer";
   }
 
   // no asside
@@ -48,7 +48,6 @@ body {
   >aside {
     grid-area: menu;
     width: $menu-width;
-    padding-top: var(--sm);
 
     +aside {
       grid-area: sidebar;
@@ -63,10 +62,10 @@ body {
 @if $sticky-sidebar==true {
   body>aside nav {
     position: sticky;
-    top: $sidebar-y-offset;
+    top: 0;
     overflow: auto;
     overflow-x: hidden;
-    height: $sidebar-height;
+    max-height: 100vh;
   }
 }
 
