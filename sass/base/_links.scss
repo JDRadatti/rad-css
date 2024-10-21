@@ -9,7 +9,7 @@
     color: map.get($color-map, hover);
   }
 
-  &[aria-current] {
+  &:not([aria-current="false"])[aria-current] {
     color: map.get($color-map, current);
     font-weight: 650;
   }
