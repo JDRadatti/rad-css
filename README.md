@@ -1,4 +1,4 @@
-# kiss-css
+# rad-css
 
 - Highly Customizable HTML Reset Built with 100% CSS.
 - Utilizes the Golden Ratio for Perfect Spacing.
