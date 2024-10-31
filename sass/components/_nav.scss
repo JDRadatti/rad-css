@@ -1,4 +1,5 @@
 @use "../abstracts" as *;
+@use "../utilities" as *;
 
 header:has(nav) {
   background-color: var(--bg-color);
@@ -29,7 +30,7 @@ nav {
     align-items: center;
     list-style: none;
     margin-left: 0;
-    gap: var(--md);
+    gap: var(--xxs);
 
     >li {
       padding: var(--xxs);
@@ -38,7 +39,7 @@ nav {
   }
 }
 
-nav[role="menu"],
+[role="menu"],
 aside nav {
   flex-direction: column;
   justify-content: flex-start;
@@ -55,20 +56,36 @@ aside nav {
 
   details>summary {
     font-weight: 700;
-
-    &.hide-arrows:after {
-      content: '';
-    }
-
-    &[disabled] {
-
-      &:after {
-        content: '';
-      }
-
-      pointer-events: none;
-
-    }
-
   }
+}
+
+
+[role="menu"] {
+  height: 100vh;
+  width: fit-content;
+  overflow: auto;
+  gap: var(--md);
+}
+
+nav[aria-label="breadcrumb"] {
+  padding-top: 0;
+  margin-bottom: var(--xl);
+  opacity: 80%;
+
+  ul {
+    margin: var(--xxs);
+  }
+
+  li:not(:last-child)::after {
+    @include icon-inline('chevron_right');
+    opacity: 50%;
+  }
+
+  li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
 }

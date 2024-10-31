@@ -62,3 +62,7 @@ section>*:not(:last-child, h1, h2, h3, h4, h5, h6) {
 body>header.wide {
   padding: 0 var(--sm);
 }
+
+body>main:has(nav[aria-label="breadcrumb"]) {
+  padding-top: 0;
+}
