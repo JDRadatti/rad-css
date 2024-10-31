@@ -1,7 +1,7 @@
 @use "../abstracts" as *;
 
 header:has(nav) {
-  background-color: var(#{$prefix}-background-color);
+  background-color: var(--bg-color);
   @include border-bottom;
 }
 

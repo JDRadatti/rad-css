@@ -24,10 +24,10 @@
   --lineHeightInEms: calc(1em * $wholestep);
 
 
-  background-color: var(#{$prefix}-background-color);
-  color: var(#{$prefix}-font-color);
-  --state-color: var(#{$prefix}-font-color);
-  --bg-color: var(#{$prefix}-background-color);
+  background-color: var(#{$color-prefix}-background);
+  color: var(#{$color-prefix}-on-background);
+  --state-color: var(#{$color-prefix}-on-background);
+  --bg-color: var(#{$color-prefix}-background);
 
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;

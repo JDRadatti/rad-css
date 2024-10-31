@@ -267,17 +267,17 @@ textarea:focus {
 }
 
 [aria-invalid="true"][aria-describedby]+small {
-  color: var(--md-sys-color-error);
+  color: var(#{$color-prefix}-error);
 }
 
 [aria-invalid="false"][aria-describedby]+small {
-  color: var(--md-sys-color-success-color);
+  color: var(#{$color-prefix}-success-color);
 }
 
 [aria-invalid="true"] {
-  border-color: var(--md-sys-color-error) !important;
+  border-color: var(#{$color-prefix}-error) !important;
 }
 
 [aria-invalid="false"] {
-  border-color: var(--md-sys-color-success-color) !important;
+  border-color: var(#{$color-prefix}-success-color) !important;
 }
