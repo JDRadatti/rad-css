@@ -8,9 +8,6 @@
   :root {
 
     /* Colors */
-    #{$prefix}-background-color: var(#{$color-prefix}-background);
-    #{$prefix}-font-color: var(#{$color-prefix}-on-background);
-
     #{$prefix}-global-border-radius: $global-border-radius;
     #{$prefix}-card-border-radius: $card-border-radius;
     #{$prefix}-border-radius: $border-radius;
