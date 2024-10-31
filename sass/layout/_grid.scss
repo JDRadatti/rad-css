@@ -1,0 +1,20 @@
+@use "../abstracts" as *;
+
+/*!
+ * Pico CSS ✨ v2.0.6 (https://picocss.com)
+ * Copyright 2019-2024 - Licensed under MIT
+ */
+.grid {
+  grid-column-gap: var(--md);
+  grid-row-gap: var(--md);
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (min-width: breakpoint(md)) {
+    grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
+  }
+
+  &>* {
+    min-width: 0; // HACK for childs in overflow
+  }
+}
