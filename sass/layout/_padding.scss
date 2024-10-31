@@ -49,7 +49,7 @@ body>main {
   overflow: hidden;
 }
 
-article>*:not(:last-child, +footer, header, footer, h1, h2, h3, h4, h5, h6),
+article>*:not(:last-child, header, footer, h1, h2, h3, h4, h5, h6),
 section>*:not(:last-child, h1, h2, h3, h4, h5, h6) {
   margin-bottom: var(--md);
 }
