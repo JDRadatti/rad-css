@@ -22,8 +22,21 @@ details {
       margin-left: auto;
     }
 
+    &.hide-arrows:after {
+      content: '';
+    }
+
     &:focus {
       color: var(#{$color-prefix}-primary);
+    }
+
+    &[disabled] {
+
+      &:after {
+        content: '';
+      }
+
+      pointer-events: none;
     }
   }
 
@@ -112,11 +125,15 @@ details[role="dropdown"] {
 
     >li {
       @include border-radius;
-      @include state-layer;
       padding: var(--xs) var(--sm);
       margin-left: $wholestep-dec + em;
       margin-right: $wholestep-dec + em;
       white-space: nowrap;
+
+      >a {
+        display: inline-block;
+        width: 100%;
+      }
     }
   }
 
@@ -143,7 +160,8 @@ select {
   }
 }
 
-nav details:not([role="dropdown"]){
+nav[role="menu"] details,
+nav details:not([role="dropdown"]) {
   margin-top: var(--sm);
   margin-left: var(--sm);
   background-color: transparent;
