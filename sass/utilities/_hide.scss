@@ -1,0 +1,12 @@
+@use "../abstracts" as *;
+
+// Inheriting elements will be hidden when screen is <= $breakpoint-size
+@each $breakpoint-name, $breakpoint-size in $breakpoints {
+
+  @media screen and (max-width: $breakpoint-size) {
+    .hide-#{$breakpoint-name} {
+      display: none;
+    }
+  }
+
+}
