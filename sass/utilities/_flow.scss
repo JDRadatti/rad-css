@@ -1,0 +1,8 @@
+@use "../abstracts" as *;
+
+// Adds margin bottom to all but last child of inherited container
+@each $breakpoint-name, $breakpoint-size in $breakpoints {
+  .flow__#{$breakpoint-name}>*:not(:last-child) {
+    margin-bottom: var(--#{$breakpoint-name});
+  }
+}
