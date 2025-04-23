@@ -154,3 +154,11 @@ a[data-icon]:hover {
 .data-icon {
   @include icon-inline(none);
 }
+
+// Use data-icon-svg to use a icon via path to a svg file
+// Must use a class with background-image: url('path/to/file.svg'); to override
+// Must set the width and height to desired size as well
+.data-icon-svg {
+  @include icon-bg-center(none);
+  background-size: auto;
+}
