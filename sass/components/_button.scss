@@ -3,6 +3,8 @@
 @use "../utilities" as *;
 
 
+[type="submit"],
+[type="button"],
 button {
 
   & {
@@ -17,6 +19,7 @@ button {
     align-self: center; // prevent streching when inside a div
     min-height: $icon-height-em;
     min-width: $icon-height-em;
+    width: fit-content;
   }
 
   // Utilities
@@ -39,6 +42,8 @@ button {
 }
 
 // Button Icon Padding
+[type="submit"][data-icon],
+[type="button"][data-icon],
 button[data-icon] {
   padding: 0;
 
