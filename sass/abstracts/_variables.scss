@@ -252,7 +252,7 @@ $icon-color: inherit;
 $transition: 0.2s ease-in-out;
 
 // Font
-$fontSize: 1.2rem;
+$fontSize: 1rem;
 
 $fontFamilyEmoji: "Apple Color Emoji",
   "Segoe UI Emoji",
@@ -295,12 +295,12 @@ $borderTransparent: $borderWidth $borderStyle transparent;
 $borderHighlight: $borderWidthThick $borderStyle $highlight;
 
 // Layout
-$menu-width: 210px;
-$sidebar-width: 210px;
+$menu-width: 0;
+$sidebar-width: 0;
 
 // Navbar
 $sticky-sidebar: true;
-$sticky-header: false;
+$sticky-header: true;
 $sidebar-y-offset: 100px;
 $sidebar-height: calc(100vh - $sidebar-y-offset);
 @if $sticky-header==false {
@@ -308,7 +308,7 @@ $sidebar-height: calc(100vh - $sidebar-y-offset);
 }
 
 // Layout Padding
-$container-padding-horizontal: var(--xl);
+$container-padding-horizontal: var(--lg);
 $container-padding-vertical: var(--lg);
 $section-flow: var(--lg);
 
@@ -319,18 +319,18 @@ $icon-chevron-down: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/s
 $input-border-width: 1px;
 $input-color-surface: $borderColor;
 $input-color-onsurface: white;
-$input-color-font: var(--md-sys-color-on-surface);
-$input-color-element-bg: var(--md-sys-color-surface);
-$input-color-active: var(--md-sys-color-primary);
-$input-color-accent: var(--md-sys-color-primary-container);
-$input-color-element-bg-focus: var(#{$color-prefix}-surface-container-lowest);
+$input-color-font: var(#{$color-prefix}-on-surface);
+$input-color-element-bg: var(#{$color-prefix}-surface);
+$input-color-active: var(#{$color-prefix}-primary);
+$input-color-accent: var(#{$color-prefix}-primary-container);
+$input-color-element-bg-focus: var(#{$color-prefix}-surface-container-low);
 
 $input-outline: $input-border-width solid $input-color-accent;
 $input-border: $input-border-width solid $input-color-surface;
 $input-border-active: $input-border-width solid $input-color-active;
 $input-border-hidden: $input-border-width solid var(--bg-color);
-$input-border-invalid: $input-border-width solid var(--md-sys-color-error);
-$input-border-valid: $input-border-width solid var(--md-sys-color-success-color);
+$input-border-invalid: $input-border-width solid var(#{$color-prefix}-error);
+$input-border-valid: $input-border-width solid var(#{$color-prefix}-success-color);
 
 // Shadows
 
@@ -357,7 +357,7 @@ $link-colors: (
     current: var(#{$color-prefix}-secondary),
   ),
   contrast: ('default': var(#{$prefix}-font-color),
-    hover: var(#{$color-prefix}-secondary),
-    current: var(#{$color-prefix}-secondary),
+    hover: var(#{$color-prefix}-font-color),
+    current: var(#{$color-prefix}-font-color),
   ),
 );
