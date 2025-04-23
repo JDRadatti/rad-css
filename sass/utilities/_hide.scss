@@ -5,8 +5,7 @@
 
   @media screen and (max-width: $breakpoint-size) {
     .hide-#{$breakpoint-name} {
-      display: none;
+      display: none !important;
     }
   }
-
 }
